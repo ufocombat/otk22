@@ -94,7 +94,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(129, 275);
+            this.exitButton.Location = new System.Drawing.Point(144, 275);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 28);
             this.exitButton.TabIndex = 15;
@@ -107,7 +107,7 @@
             this.enterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.enterButton.Location = new System.Drawing.Point(39, 275);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(75, 28);
+            this.enterButton.Size = new System.Drawing.Size(99, 28);
             this.enterButton.TabIndex = 14;
             this.enterButton.Text = "Вход";
             this.enterButton.UseVisualStyleBackColor = true;

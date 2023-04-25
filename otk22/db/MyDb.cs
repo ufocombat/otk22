@@ -55,6 +55,11 @@ namespace otk22.db
             return getSelectTable("SELECT * FROM orders");
         }
 
+        public static DataTable getUserOrders()
+        {
+            return getSelectTable("SELECT o.id, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id");
+        }
+
 
         public static DataTable getRoles()
         {

@@ -28,58 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rolesGridView = new System.Windows.Forms.DataGridView();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employee = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesGridView)).BeginInit();
+            this.clientPanelOrders = new System.Windows.Forms.Panel();
+            this.ordersGridView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
+            this.clientPanelOrders.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rolesGridView
-            // 
-            this.rolesGridView.AllowUserToAddRows = false;
-            this.rolesGridView.AllowUserToDeleteRows = false;
-            this.rolesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rolesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rolesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.code,
-            this.description,
-            this.employee});
-            this.rolesGridView.Location = new System.Drawing.Point(0, 27);
-            this.rolesGridView.Name = "rolesGridView";
-            this.rolesGridView.ReadOnly = true;
-            this.rolesGridView.RowTemplate.Height = 25;
-            this.rolesGridView.Size = new System.Drawing.Size(800, 369);
-            this.rolesGridView.TabIndex = 1;
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Код";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Описание";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // employee
-            // 
-            this.employee.DataPropertyName = "employee";
-            this.employee.HeaderText = "Сотрудник";
-            this.employee.Name = "employee";
-            this.employee.ReadOnly = true;
             // 
             // файлToolStripMenuItem
             // 
@@ -122,33 +85,105 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "mainMenu";
             // 
+            // clientPanelOrders
+            // 
+            this.clientPanelOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clientPanelOrders.Controls.Add(this.ordersGridView);
+            this.clientPanelOrders.Controls.Add(this.statusStrip1);
+            this.clientPanelOrders.Location = new System.Drawing.Point(0, 27);
+            this.clientPanelOrders.Name = "clientPanelOrders";
+            this.clientPanelOrders.Size = new System.Drawing.Size(800, 424);
+            this.clientPanelOrders.TabIndex = 1;
+            // 
+            // ordersGridView
+            // 
+            this.ordersGridView.AllowUserToAddRows = false;
+            this.ordersGridView.AllowUserToDeleteRows = false;
+            this.ordersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ordersGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(72)))), ((int)(((byte)(141)))));
+            this.ordersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ordersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.discountPercent,
+            this.name});
+            this.ordersGridView.Location = new System.Drawing.Point(0, 0);
+            this.ordersGridView.MultiSelect = false;
+            this.ordersGridView.Name = "ordersGridView";
+            this.ordersGridView.ReadOnly = true;
+            this.ordersGridView.RowTemplate.Height = 25;
+            this.ordersGridView.RowTemplate.ReadOnly = true;
+            this.ordersGridView.ShowEditingIcon = false;
+            this.ordersGridView.Size = new System.Drawing.Size(800, 399);
+            this.ordersGridView.TabIndex = 1;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
+            this.discountPercent.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Услуга";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rolesGridView);
+            this.Controls.Add(this.clientPanelOrders);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListForm";
             this.Text = "ОТК - Список заказов";
-            ((System.ComponentModel.ISupportInitialize)(this.rolesGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.clientPanelOrders.ResumeLayout(false);
+            this.clientPanelOrders.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DataGridView rolesGridView;
-        private DataGridViewTextBoxColumn code;
-        private DataGridViewTextBoxColumn description;
-        private DataGridViewCheckBoxColumn employee;
         private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem разлогинитьсяToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem выходToolStripMenuItem;
         private MenuStrip menuStrip1;
+        private Panel clientPanelOrders;
+        private StatusStrip statusStrip1;
+        private DataGridView ordersGridView;
+        private DataGridViewTextBoxColumn uselLogin;
+        private DataGridViewTextBoxColumn userLogin;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn discountPercent;
+        private DataGridViewTextBoxColumn name;
     }
 }

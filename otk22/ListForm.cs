@@ -17,7 +17,8 @@ namespace otk22
         public ListForm()
         {
             InitializeComponent();
-            rolesGridView.DataSource = MyDb.getRoles();
+            //rolesGridView.DataSource = MyDb.getRoles();
+            ordersGridView.DataSource = MyDb.getUserOrders();
         }
 
         private void разлогинитьсяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +31,11 @@ namespace otk22
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void adminPanelRoles_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
