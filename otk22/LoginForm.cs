@@ -1,4 +1,7 @@
 using MySql.Data.MySqlClient;
+using System.Data;
+using otk22.db;
+using otk22.models;
 
 namespace otk22
 {
@@ -40,25 +43,39 @@ namespace otk22
                 return;
             }
 
-            //https://www.youtube.com/watch?v=HOdJUMlc4ZM
+            DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
 
-            string connectionString = "server=localhost; database=otk; uid=root;pwd=123456;";
-            MySqlConnection con = new MySqlConnection(connectionString);
+            if (users.Rows.Count < 1)
+            {
+                loginLabelError.Text = "Пользователь не найден, проверьте логин и пароль";
+                loginLabelError.Visible = true;
+                loginTextBox.Focus();
+                return;
+            }
 
-            try
+            User user = new User()
             {
-                con.Open();
-                con.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show($"Не удалось подключится к БД: {error.Message}");
-            }
+                login = (String)users.Rows[0]["login"],
+                name  = (String)users.Rows[0]["name"],
+                roleCode  = (String)users.Rows[0]["roleCode"],
+                customerId = (int)users.Rows[0]["customerId"]
+            };
+
+            DataTable roles = MyDb.getRole(user.roleCode);
+            Boolean employee = Convert.ToBoolean(roles.Rows[0]["employee"]);
 
             this.Hide();
-            ListForm listForm = new ListForm();
-            listForm.Show();
 
+            if (employee)
+            {
+                ListForm listForm = new ListForm();
+                listForm.Show();
+            }
+            else
+            {
+                ClientForm clientForm = new ClientForm(user);
+                clientForm.Show();
+            }
         }
 
         private void exitButton_Click(object sender, EventArgs e)

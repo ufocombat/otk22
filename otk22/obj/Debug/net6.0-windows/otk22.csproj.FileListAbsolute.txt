@@ -30,3 +30,4 @@ C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\krbcc64.dll
 C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.csproj.CopyComplete
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.Properties.Resources.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ClientForm.resources

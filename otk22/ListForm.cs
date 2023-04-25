@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using otk22.db;
+using otk22.models;
 
 namespace otk22
 {

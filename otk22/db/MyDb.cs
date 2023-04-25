@@ -50,6 +50,11 @@ namespace otk22.db
             return dataTable;
         }
 
+        public static DataTable getUsers(String login, String password)
+        {
+            return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
+        }
+
         public static DataTable getOrders()
         {
             return getSelectTable("SELECT * FROM orders");
@@ -64,6 +69,11 @@ namespace otk22.db
         public static DataTable getRoles()
         {
             return getSelectTable("SELECT * FROM roles");
+        }
+
+        public static DataTable getRole(String code)
+        {
+            return getSelectTable($"SELECT * FROM roles where code='{code}'");
         }
     }
 }
