@@ -28,62 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employee = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
-            this.menuStrip1.SuspendLayout();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "mainMenu";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.разлогинитьсяToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.выходToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // разлогинитьсяToolStripMenuItem
-            // 
-            this.разлогинитьсяToolStripMenuItem.Name = "разлогинитьсяToolStripMenuItem";
-            this.разлогинитьсяToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.разлогинитьсяToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.разлогинитьсяToolStripMenuItem.Text = "Разлогиниться";
-            this.разлогинитьсяToolStripMenuItem.Click += new System.EventHandler(this.разлогинитьсяToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D4)));
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -125,25 +81,46 @@
             this.employee.Name = "employee";
             this.employee.ReadOnly = true;
             // 
-            // mySqlDataAdapter1
+            // файлToolStripMenuItem
             // 
-            this.mySqlDataAdapter1.DeleteCommand = null;
-            this.mySqlDataAdapter1.InsertCommand = null;
-            this.mySqlDataAdapter1.SelectCommand = this.mySqlCommand1;
-            this.mySqlDataAdapter1.UpdateCommand = null;
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.разлогинитьсяToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // mySqlCommand1
+            // разлогинитьсяToolStripMenuItem
             // 
-            this.mySqlCommand1.CacheAge = 60;
-            this.mySqlCommand1.CommandText = "select * from users";
-            this.mySqlCommand1.CommandType = System.Data.CommandType.TableDirect;
-            this.mySqlCommand1.Connection = this.mySqlConnection1;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
+            this.разлогинитьсяToolStripMenuItem.Name = "разлогинитьсяToolStripMenuItem";
+            this.разлогинитьсяToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
+            this.разлогинитьсяToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.разлогинитьсяToolStripMenuItem.Text = "Разлогиниться";
+            this.разлогинитьсяToolStripMenuItem.Click += new System.EventHandler(this.разлогинитьсяToolStripMenuItem_Click);
             // 
-            // mySqlConnection1
+            // toolStripMenuItem1
             // 
-            this.mySqlConnection1.ConnectionString = "server=localhost;database=otk;user id=root;password=123456";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(192, 6);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D4)));
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "mainMenu";
             // 
             // ListForm
             // 
@@ -155,27 +132,23 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListForm";
             this.Text = "ОТК - Список заказов";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn code;
+        private DataGridViewTextBoxColumn description;
+        private DataGridViewCheckBoxColumn employee;
         private ToolStripMenuItem файлToolStripMenuItem;
         private ToolStripMenuItem разлогинитьсяToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem выходToolStripMenuItem;
-        private DataGridView dataGridView1;
-        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
-        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private DataGridViewTextBoxColumn code;
-        private DataGridViewTextBoxColumn description;
-        private DataGridViewCheckBoxColumn employee;
+        private MenuStrip menuStrip1;
     }
 }

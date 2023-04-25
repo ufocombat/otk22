@@ -29,7 +29,6 @@ namespace otk22
             try
             {
                 con.Open();
-                MessageBox.Show("OK");
 
                 //MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataAdapter returnVal = new MySqlDataAdapter("SELECT * FROM roles", con);
@@ -53,16 +52,10 @@ namespace otk22
 
         private void разлогинитьсяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-
             this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
 
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
