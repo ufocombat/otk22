@@ -11,15 +11,33 @@ namespace otk22
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            if (loginTextBox.Text.Length<=0)
+            int errors = 0;
+
+            if (loginTextBox.Text.Length <= 0)
             {
                 loginLabelError.Text = "Введите логин";
                 loginLabelError.Visible = true;
-                return;
+                errors++;
             }
             else
             {
                 loginLabelError.Visible = false;
+            }
+
+            if (passwordTextBox.Text.Length <= 0)
+            {
+                passwordLabelError.Text = "Введите пароль";
+                passwordLabelError.Visible = true;
+                errors++;
+            }
+            else
+            {
+                passwordLabelError.Visible = false;
+            }
+
+            if (errors > 0)
+            {
+                return;
             }
 
             //https://www.youtube.com/watch?v=HOdJUMlc4ZM
@@ -30,18 +48,22 @@ namespace otk22
             try
             {
                 con.Open();
-                MessageBox.Show("OK");
                 con.Close();
             }
             catch (Exception error)
             {
-                MessageBox.Show($"Cannot conext: {error.Message}");
+                MessageBox.Show($"Не удалось подключится к БД: {error.Message}");
             }
 
             this.Hide();
             ListForm listForm = new ListForm();
             listForm.Show();
 
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
