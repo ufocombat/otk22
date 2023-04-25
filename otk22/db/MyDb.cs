@@ -30,18 +30,17 @@ namespace otk22.db
             return con;
         }
 
-        public static DataTable getRoles()
+        public static DataTable getSelectTable(String select)
         {
             MySqlConnection con = getSqlConnection();
-            DataTable dataTable = new DataTable("roles");
+            DataTable dataTable = new DataTable("table");
 
             try
             {
-                MySqlDataAdapter returnVal = new MySqlDataAdapter("SELECT * FROM roles", con);
+                MySqlDataAdapter returnVal = new MySqlDataAdapter(select, con);
 
                 returnVal.Fill(dataTable);
                 con.Close();
-
             }
             catch (Exception error)
             {
@@ -49,6 +48,17 @@ namespace otk22.db
             }
 
             return dataTable;
+        }
+
+        public static DataTable getOrders()
+        {
+            return getSelectTable("SELECT * FROM orders");
+        }
+
+
+        public static DataTable getRoles()
+        {
+            return getSelectTable("SELECT * FROM roles");
         }
     }
 }

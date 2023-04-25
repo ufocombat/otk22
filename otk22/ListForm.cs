@@ -14,22 +14,10 @@ namespace otk22
 {
     public partial class ListForm : Form
     {
-        DataTable dt = new DataTable("users");
-
         public ListForm()
         {
             InitializeComponent();
-            GetUsers();
-        }
-
-        private void GetUsers()
-        {
-            dataGridView1.DataSource = MyDb.getRoles();
-        }
-
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            rolesGridView.DataSource = MyDb.getRoles();
         }
 
         private void разлогинитьсяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,5 +27,9 @@ namespace otk22
             loginForm.Show();
         }
 
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
