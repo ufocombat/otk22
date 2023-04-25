@@ -33,6 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.exitButton = new System.Windows.Forms.Button();
             this.enterButton = new System.Windows.Forms.Button();
             this.passwordLabelError = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.loginLabelError = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -92,6 +92,16 @@
             this.panel1.Size = new System.Drawing.Size(375, 337);
             this.panel1.TabIndex = 7;
             // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(129, 275);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 28);
+            this.exitButton.TabIndex = 15;
+            this.exitButton.Text = "Выход";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // enterButton
             // 
             this.enterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,6 +138,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(39, 206);
             this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(180, 23);
             this.passwordTextBox.TabIndex = 11;
             // 
@@ -179,16 +190,6 @@
             this.loginLabel.Size = new System.Drawing.Size(41, 15);
             this.loginLabel.TabIndex = 7;
             this.loginLabel.Text = "Логин";
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(129, 275);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 28);
-            this.exitButton.TabIndex = 15;
-            this.exitButton.Text = "Выход";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // LoginForm
             // 

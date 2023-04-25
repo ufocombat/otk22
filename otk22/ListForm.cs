@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using otk22.db;
 
 namespace otk22
 {
@@ -23,26 +24,7 @@ namespace otk22
 
         private void GetUsers()
         {
-            string connectionString = "server=localhost; database=otk; uid=root;pwd=123456;";
-            MySqlConnection con = new MySqlConnection(connectionString);
-
-            try
-            {
-                con.Open();
-
-                //MySqlCommand cmd = new MySqlCommand(query, con);
-                MySqlDataAdapter returnVal = new MySqlDataAdapter("SELECT * FROM roles", con);
-                
-                returnVal.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-
-                con.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show($"Cannot conext: {error.Message}");
-            }
+            dataGridView1.DataSource = MyDb.getRoles();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
