@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using otk22.db;
 using otk22.models;
 
 namespace otk22
@@ -19,6 +20,8 @@ namespace otk22
         {
             InitializeComponent();
             this.user = user;
+
+            ordersGridView.DataSource = MyDb.getUserOrders(user.login);
         }
 
         private void ClientForm_Load(object sender, EventArgs e)

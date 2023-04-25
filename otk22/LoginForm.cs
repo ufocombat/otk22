@@ -68,7 +68,7 @@ namespace otk22
 
             if (employee)
             {
-                ListForm listForm = new ListForm();
+                ListForm listForm = new ListForm(user);
                 listForm.Show();
             }
             else

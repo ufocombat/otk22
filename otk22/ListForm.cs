@@ -15,11 +15,14 @@ namespace otk22
 {
     public partial class ListForm : Form
     {
-        public ListForm()
+        public readonly User user;
+
+        public ListForm(User user)
         {
             InitializeComponent();
-            //rolesGridView.DataSource = MyDb.getRoles();
-            ordersGridView.DataSource = MyDb.getUserOrders();
+            this.user = user;
+
+            ordersGridView.DataSource = MyDb.getUsersOrders();
         }
 
         private void разлогинитьсяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,9 +37,9 @@ namespace otk22
             Application.Exit();
         }
 
-        private void adminPanelRoles_Paint(object sender, PaintEventArgs e)
+        private void ListForm_Load(object sender, EventArgs e)
         {
-
+            Text = $"ОТК - Список заказов. Администратор - {user.name}";
         }
     }
 }

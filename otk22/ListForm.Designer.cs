@@ -35,10 +35,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -108,10 +111,11 @@
             this.ordersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.discountPercent,
+            this.dataGridViewTextBoxColumn1,
+            this.userLogin,
+            this.dataGridViewTextBoxColumn2,
             this.name});
-            this.ordersGridView.Location = new System.Drawing.Point(0, 0);
+            this.ordersGridView.Location = new System.Drawing.Point(0, 13);
             this.ordersGridView.MultiSelect = false;
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
@@ -119,21 +123,28 @@
             this.ordersGridView.RowTemplate.ReadOnly = true;
             this.ordersGridView.ShowEditingIcon = false;
             this.ordersGridView.Size = new System.Drawing.Size(800, 399);
-            this.ordersGridView.TabIndex = 1;
+            this.ordersGridView.TabIndex = 3;
             // 
-            // id
+            // dataGridViewTextBoxColumn1
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Заказ Но";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Заказ Но";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // discountPercent
+            // userLogin
             // 
-            this.discountPercent.DataPropertyName = "discountPercent";
-            this.discountPercent.HeaderText = "Скидка (%)";
-            this.discountPercent.Name = "discountPercent";
-            this.discountPercent.ReadOnly = true;
+            this.userLogin.DataPropertyName = "userLogin";
+            this.userLogin.HeaderText = "Логин";
+            this.userLogin.Name = "userLogin";
+            this.userLogin.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "discountPercent";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Скидка (%)";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // name
             // 
@@ -151,6 +162,18 @@
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -161,6 +184,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ListForm";
             this.Text = "ОТК - Список заказов";
+            this.Load += new System.EventHandler(this.ListForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.clientPanelOrders.ResumeLayout(false);
@@ -179,11 +203,13 @@
         private MenuStrip menuStrip1;
         private Panel clientPanelOrders;
         private StatusStrip statusStrip1;
-        private DataGridView ordersGridView;
         private DataGridViewTextBoxColumn uselLogin;
         private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
+        private DataGridView ordersGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
     }
 }
