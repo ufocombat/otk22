@@ -68,12 +68,12 @@ namespace otk22
 
             if (employee)
             {
-                ListForm listForm = new ListForm(user);
+                ManagerForm listForm = new ManagerForm(this, user);
                 listForm.Show();
             }
             else
             {
-                ClientForm clientForm = new ClientForm(user);
+                ClientForm clientForm = new ClientForm(this, user);
                 clientForm.Show();
             }
         }

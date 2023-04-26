@@ -1,6 +1,6 @@
 ﻿namespace otk22
 {
-    partial class ListForm
+    partial class ManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@
             this.userLogin,
             this.dataGridViewTextBoxColumn2,
             this.name});
-            this.ordersGridView.Location = new System.Drawing.Point(0, 13);
+            this.ordersGridView.Location = new System.Drawing.Point(3, 0);
             this.ordersGridView.MultiSelect = false;
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
@@ -174,7 +174,7 @@
             this.discountPercent.HeaderText = "Скидка (%)";
             this.discountPercent.Name = "discountPercent";
             // 
-            // ListForm
+            // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,8 +182,8 @@
             this.Controls.Add(this.clientPanelOrders);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ListForm";
-            this.Text = "ОТК - Список заказов";
+            this.Name = "ManagerForm";
+            this.Text = "ОТК - Список заказов - Менеджер";
             this.Load += new System.EventHandler(this.ListForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

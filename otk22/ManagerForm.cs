@@ -13,13 +13,15 @@ using otk22.models;
 
 namespace otk22
 {
-    public partial class ListForm : Form
+    public partial class ManagerForm : Form
     {
         public readonly User user;
+        public readonly Form? loginForm;
 
-        public ListForm(User user)
+        public ManagerForm(Form loginForm, User user)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
             this.user = user;
 
             ordersGridView.DataSource = MyDb.getUsersOrders();
@@ -34,7 +36,7 @@ namespace otk22
 
         private void ListForm_Load(object sender, EventArgs e)
         {
-            Text = $"ОТК - Список заказов - Администратор - {user.name}";
+            Text = $"ОТК - Список заказов - Менеджер - {user.name}";
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)

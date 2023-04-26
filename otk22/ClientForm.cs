@@ -15,10 +15,13 @@ namespace otk22
     public partial class ClientForm : Form
     {
         public readonly User user;
+        public readonly Form? loginForm;
 
-        public ClientForm(User user)
+        public ClientForm(Form loginForm, User user)
         {
             InitializeComponent();
+
+            this.loginForm = loginForm;
             this.user = user;
 
             ordersGridView.DataSource = MyDb.getUserOrders(user.login);
