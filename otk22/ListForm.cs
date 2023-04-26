@@ -32,14 +32,14 @@ namespace otk22
             loginForm.Show();
         }
 
+        private void ListForm_Load(object sender, EventArgs e)
+        {
+            Text = $"ОТК - Список заказов - Администратор - {user.name}";
+        }
+
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void ListForm_Load(object sender, EventArgs e)
-        {
-            Text = $"ОТК - Список заказов. Администратор - {user.name}";
         }
     }
 }
