@@ -10,7 +10,7 @@ namespace otk22.models
     {
         public String login;
         public String name;
-        public int? customerId;
+        public Int32  customerId;
         public String roleCode;
         public String password;
     }

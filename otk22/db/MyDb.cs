@@ -11,8 +11,6 @@ namespace otk22.db
 {
     class MyDb
     {
-        
-
         public static MySqlConnection getSqlConnection()
         {
             string connectionString = "server=localhost; database=otk; uid=root;pwd=123456;";
@@ -44,7 +42,7 @@ namespace otk22.db
             }
             catch (Exception error)
             {
-                MessageBox.Show($"Cannot conext: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка выполнения запроса: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return dataTable;

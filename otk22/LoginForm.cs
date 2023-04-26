@@ -58,7 +58,7 @@ namespace otk22
                 login = (String)users.Rows[0]["login"],
                 name  = (String)users.Rows[0]["name"],
                 roleCode  = (String)users.Rows[0]["roleCode"],
-                customerId = (int)users.Rows[0]["customerId"]
+                customerId = Convert.ToInt32(users.Rows[0]["customerId"])
             };
 
             DataTable roles = MyDb.getRole(user.roleCode);
