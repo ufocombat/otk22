@@ -28,5 +28,10 @@ namespace otk22
         {
             Text = $"ОТК - Список заказов клиента - {user.name}";
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.panelLeft = new System.Windows.Forms.Panel();
@@ -43,6 +44,7 @@
             this.loginLabelError = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelLogin.SuspendLayout();
@@ -94,7 +96,7 @@
             this.panelLogin.Controls.Add(this.loginLabel);
             this.panelLogin.Location = new System.Drawing.Point(210, 0);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(375, 337);
+            this.panelLogin.Size = new System.Drawing.Size(376, 337);
             this.panelLogin.TabIndex = 7;
             // 
             // exitButton
@@ -110,7 +112,7 @@
             // enterButton
             // 
             this.enterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.enterButton.Location = new System.Drawing.Point(39, 275);
+            this.enterButton.Location = new System.Drawing.Point(40, 275);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(86, 28);
             this.enterButton.TabIndex = 14;
@@ -122,7 +124,7 @@
             // 
             this.passwordLabelError.AutoSize = true;
             this.passwordLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordLabelError.ForeColor = System.Drawing.Color.Red;
+            this.passwordLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
             this.passwordLabelError.Location = new System.Drawing.Point(39, 232);
             this.passwordLabelError.Name = "passwordLabelError";
             this.passwordLabelError.Size = new System.Drawing.Size(109, 13);
@@ -154,7 +156,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(375, 87);
+            this.panelTop.Size = new System.Drawing.Size(376, 87);
             this.panelTop.TabIndex = 6;
             // 
             // labelEnter
@@ -172,7 +174,7 @@
             // 
             this.loginLabelError.AutoSize = true;
             this.loginLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginLabelError.ForeColor = System.Drawing.Color.Red;
+            this.loginLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
             this.loginLabelError.Location = new System.Drawing.Point(39, 169);
             this.loginLabelError.Name = "loginLabelError";
             this.loginLabelError.Size = new System.Drawing.Size(86, 13);
@@ -205,6 +207,7 @@
             this.ClientSize = new System.Drawing.Size(584, 336);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelLeft);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximumSize = new System.Drawing.Size(600, 375);
             this.MinimumSize = new System.Drawing.Size(500, 375);
             this.Name = "LoginForm";
@@ -236,5 +239,6 @@
         private Button enterButton;
         private Label passwordLabelError;
         private Button exitButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -32,7 +32,13 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.разлогинитсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
+            this.clientMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ordersGridView
@@ -81,17 +87,61 @@
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
+            // clientMenuStrip
+            // 
+            this.clientMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.clientMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.clientMenuStrip.Name = "clientMenuStrip";
+            this.clientMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.clientMenuStrip.TabIndex = 3;
+            this.clientMenuStrip.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.разлогинитсяToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // разлогинитсяToolStripMenuItem
+            // 
+            this.разлогинитсяToolStripMenuItem.Name = "разлогинитсяToolStripMenuItem";
+            this.разлогинитсяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.разлогинитсяToolStripMenuItem.Text = "Разлогинится";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ordersGridView);
+            this.Controls.Add(this.clientMenuStrip);
+            this.MainMenuStrip = this.clientMenuStrip;
             this.Name = "ClientForm";
             this.Text = "ОТК - Список заказов клиента";
             this.Load += new System.EventHandler(this.ClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
+            this.clientMenuStrip.ResumeLayout(false);
+            this.clientMenuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -101,5 +151,10 @@
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridViewTextBoxColumn name;
+        private MenuStrip clientMenuStrip;
+        private ToolStripMenuItem файлToolStripMenuItem;
+        private ToolStripMenuItem разлогинитсяToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem выходToolStripMenuItem;
     }
 }
