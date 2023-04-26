@@ -30,18 +30,17 @@ namespace otk22
         private void разлогинитьсяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-        }
-
-        private void ListForm_Load(object sender, EventArgs e)
-        {
-            Text = $"ОТК - Список заказов - Менеджер - {user.name}";
+            loginForm!.Show();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ManagerForm_Load(object sender, EventArgs e)
+        {
+            Text = $"ОТК - Список заказов - Менеджер - {user.name}";
         }
     }
 }

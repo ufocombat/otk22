@@ -82,5 +82,11 @@ namespace otk22
         {
             Application.Exit();
         }
+
+        private void LoginForm_VisibleChanged(object sender, EventArgs e)
+        {
+            passwordTextBox.Text = String.Empty;
+            loginTextBox.Focus();
+        }
     }
 }

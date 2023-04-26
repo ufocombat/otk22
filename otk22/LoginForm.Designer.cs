@@ -213,6 +213,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ОТК - Вход";
+            this.VisibleChanged += new System.EventHandler(this.LoginForm_VisibleChanged);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();

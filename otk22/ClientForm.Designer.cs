@@ -112,6 +112,7 @@
             this.разлогинитсяToolStripMenuItem.Name = "разлогинитсяToolStripMenuItem";
             this.разлогинитсяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.разлогинитсяToolStripMenuItem.Text = "Разлогинится";
+            this.разлогинитсяToolStripMenuItem.Click += new System.EventHandler(this.разлогинитсяToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

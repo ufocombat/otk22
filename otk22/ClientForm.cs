@@ -36,5 +36,11 @@ namespace otk22
         {
             Application.Exit();
         }
+
+        private void разлогинитсяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm!.Show();
+        }
     }
 }

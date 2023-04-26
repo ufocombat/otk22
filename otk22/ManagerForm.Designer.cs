@@ -184,7 +184,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ManagerForm";
             this.Text = "ОТК - Список заказов - Менеджер";
-            this.Load += new System.EventHandler(this.ListForm_Load);
+            this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.clientPanelOrders.ResumeLayout(false);
