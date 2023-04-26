@@ -37,8 +37,11 @@
             this.разлогинитсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             this.clientMenuStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // ordersGridView
@@ -62,7 +65,7 @@
             this.ordersGridView.RowTemplate.Height = 25;
             this.ordersGridView.RowTemplate.ReadOnly = true;
             this.ordersGridView.ShowEditingIcon = false;
-            this.ordersGridView.Size = new System.Drawing.Size(800, 399);
+            this.ordersGridView.Size = new System.Drawing.Size(800, 424);
             this.ordersGridView.TabIndex = 2;
             // 
             // id
@@ -127,11 +130,28 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripLogin});
+            this.statusStrip.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 4;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // stripLogin
+            // 
+            this.stripLogin.Name = "stripLogin";
+            this.stripLogin.Size = new System.Drawing.Size(34, 17);
+            this.stripLogin.Text = "login";
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.ordersGridView);
             this.Controls.Add(this.clientMenuStrip);
             this.MainMenuStrip = this.clientMenuStrip;
@@ -141,6 +161,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             this.clientMenuStrip.ResumeLayout(false);
             this.clientMenuStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +179,7 @@
         private ToolStripMenuItem разлогинитсяToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem выходToolStripMenuItem;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel stripLogin;
     }
 }

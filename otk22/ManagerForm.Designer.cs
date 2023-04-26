@@ -32,19 +32,21 @@
             this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1.SuspendLayout();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // файлToolStripMenuItem
@@ -78,15 +80,15 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "mainMenu";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 0;
+            this.menuStrip.Text = "mainMenu";
             // 
             // clientPanelOrders
             // 
@@ -94,7 +96,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.clientPanelOrders.Controls.Add(this.ordersGridView);
-            this.clientPanelOrders.Controls.Add(this.statusStrip1);
+            this.clientPanelOrders.Controls.Add(this.statusStrip);
             this.clientPanelOrders.Location = new System.Drawing.Point(0, 27);
             this.clientPanelOrders.Name = "clientPanelOrders";
             this.clientPanelOrders.Size = new System.Drawing.Size(800, 424);
@@ -123,28 +125,8 @@
             this.ordersGridView.RowTemplate.Height = 25;
             this.ordersGridView.RowTemplate.ReadOnly = true;
             this.ordersGridView.ShowEditingIcon = false;
-            this.ordersGridView.Size = new System.Drawing.Size(800, 399);
+            this.ordersGridView.Size = new System.Drawing.Size(800, 402);
             this.ordersGridView.TabIndex = 3;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Заказ Но";
-            this.id.Name = "id";
-            // 
-            // discountPercent
-            // 
-            this.discountPercent.DataPropertyName = "discountPercent";
-            this.discountPercent.HeaderText = "Скидка (%)";
-            this.discountPercent.Name = "discountPercent";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -175,22 +157,52 @@
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripLogin});
+            this.statusStrip.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
+            // 
+            // stripLogin
+            // 
+            this.stripLogin.Name = "stripLogin";
+            this.stripLogin.Size = new System.Drawing.Size(34, 17);
+            this.stripLogin.Text = "login";
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.clientPanelOrders);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "ManagerForm";
             this.Text = "ОТК - Список заказов - Менеджер";
             this.Load += new System.EventHandler(this.ManagerForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.clientPanelOrders.ResumeLayout(false);
             this.clientPanelOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,9 +213,9 @@
         private ToolStripMenuItem разлогинитьсяToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem выходToolStripMenuItem;
-        private MenuStrip menuStrip1;
+        private MenuStrip menuStrip;
         private Panel clientPanelOrders;
-        private StatusStrip statusStrip1;
+        private StatusStrip statusStrip;
         private DataGridViewTextBoxColumn uselLogin;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
@@ -212,5 +224,6 @@
         private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
+        private ToolStripStatusLabel stripLogin;
     }
 }

@@ -30,6 +30,7 @@ namespace otk22
         private void ClientForm_Load(object sender, EventArgs e)
         {
             Text = $"ОТК - Список заказов клиента - {user.name}";
+            statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)

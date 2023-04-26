@@ -41,6 +41,7 @@ namespace otk22
         private void ManagerForm_Load(object sender, EventArgs e)
         {
             Text = $"ОТК - Список заказов - Менеджер - {user.name}";
+            statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
         }
     }
 }
