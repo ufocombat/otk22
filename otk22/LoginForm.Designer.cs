@@ -72,7 +72,7 @@
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(25, 107);
+            this.logo.Location = new System.Drawing.Point(22, 88);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(161, 122);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -101,7 +101,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(140, 275);
+            this.exitButton.Location = new System.Drawing.Point(152, 267);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(79, 28);
             this.exitButton.TabIndex = 15;
@@ -112,7 +112,7 @@
             // enterButton
             // 
             this.enterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.enterButton.Location = new System.Drawing.Point(40, 275);
+            this.enterButton.Location = new System.Drawing.Point(52, 267);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(86, 28);
             this.enterButton.TabIndex = 14;
@@ -125,7 +125,7 @@
             this.passwordLabelError.AutoSize = true;
             this.passwordLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
-            this.passwordLabelError.Location = new System.Drawing.Point(39, 232);
+            this.passwordLabelError.Location = new System.Drawing.Point(51, 224);
             this.passwordLabelError.Name = "passwordLabelError";
             this.passwordLabelError.Size = new System.Drawing.Size(109, 13);
             this.passwordLabelError.TabIndex = 13;
@@ -135,7 +135,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(39, 188);
+            this.passwordLabel.Location = new System.Drawing.Point(51, 180);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(49, 15);
             this.passwordLabel.TabIndex = 12;
@@ -143,7 +143,7 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(39, 206);
+            this.passwordTextBox.Location = new System.Drawing.Point(51, 198);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(180, 23);
@@ -156,14 +156,14 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(376, 87);
+            this.panelTop.Size = new System.Drawing.Size(376, 69);
             this.panelTop.TabIndex = 6;
             // 
             // labelEnter
             // 
             this.labelEnter.AutoSize = true;
             this.labelEnter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEnter.Location = new System.Drawing.Point(39, 23);
+            this.labelEnter.Location = new System.Drawing.Point(39, 19);
             this.labelEnter.Margin = new System.Windows.Forms.Padding(0);
             this.labelEnter.Name = "labelEnter";
             this.labelEnter.Size = new System.Drawing.Size(181, 32);
@@ -175,7 +175,7 @@
             this.loginLabelError.AutoSize = true;
             this.loginLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
-            this.loginLabelError.Location = new System.Drawing.Point(39, 169);
+            this.loginLabelError.Location = new System.Drawing.Point(51, 161);
             this.loginLabelError.Name = "loginLabelError";
             this.loginLabelError.Size = new System.Drawing.Size(86, 13);
             this.loginLabelError.TabIndex = 10;
@@ -184,7 +184,7 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(39, 143);
+            this.loginTextBox.Location = new System.Drawing.Point(51, 135);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(180, 23);
             this.loginTextBox.TabIndex = 8;
@@ -192,7 +192,7 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(39, 125);
+            this.loginLabel.Location = new System.Drawing.Point(51, 117);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(41, 15);
             this.loginLabel.TabIndex = 7;

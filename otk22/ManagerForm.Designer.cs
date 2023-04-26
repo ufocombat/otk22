@@ -35,13 +35,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -116,6 +116,7 @@
             this.dataGridViewTextBoxColumn2,
             this.name});
             this.ordersGridView.Location = new System.Drawing.Point(3, 0);
+            this.ordersGridView.Margin = new System.Windows.Forms.Padding(0);
             this.ordersGridView.MultiSelect = false;
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
@@ -124,6 +125,26 @@
             this.ordersGridView.ShowEditingIcon = false;
             this.ordersGridView.Size = new System.Drawing.Size(800, 399);
             this.ordersGridView.TabIndex = 3;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -153,26 +174,6 @@
             this.name.HeaderText = "Услуга";
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 402);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Заказ Но";
-            this.id.Name = "id";
-            // 
-            // discountPercent
-            // 
-            this.discountPercent.DataPropertyName = "discountPercent";
-            this.discountPercent.HeaderText = "Скидка (%)";
-            this.discountPercent.Name = "discountPercent";
             // 
             // ManagerForm
             // 
@@ -204,11 +205,11 @@
         private Panel clientPanelOrders;
         private StatusStrip statusStrip1;
         private DataGridViewTextBoxColumn uselLogin;
-        private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridView ordersGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
     }
