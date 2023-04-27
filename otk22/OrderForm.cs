@@ -73,18 +73,6 @@ namespace otk22
                 serviceLabelError.Visible = false;
             }
 
-            if (discountUpDown.Value < 10)
-            {
-                discounrLabelError.Text = "Минимальная скидка 10%";
-                discounrLabelError.Visible = true;
-
-                errors++;
-            }
-            else
-            {
-                serviceLabelError.Visible = false;
-            }
-
             return errors <= 0;
         }
 
@@ -135,11 +123,6 @@ namespace otk22
             order.calcTotalAmount();
 
             refreshForm();
-        }
-
-        private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = !orderValidation();
         }
     }
 }

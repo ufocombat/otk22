@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,7 +44,6 @@
             this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteOrderButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -127,8 +125,7 @@
             this.dataGridViewTextBoxColumn1,
             this.userLogin,
             this.dataGridViewTextBoxColumn2,
-            this.name,
-            this.deleteOrderButton});
+            this.name});
             this.ordersGridView.Location = new System.Drawing.Point(3, 0);
             this.ordersGridView.Margin = new System.Windows.Forms.Padding(0);
             this.ordersGridView.MultiSelect = false;
@@ -197,20 +194,6 @@
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
-            // deleteOrderButton
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
-            this.deleteOrderButton.DefaultCellStyle = dataGridViewCellStyle1;
-            this.deleteOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteOrderButton.HeaderText = "";
-            this.deleteOrderButton.Name = "deleteOrderButton";
-            this.deleteOrderButton.ReadOnly = true;
-            this.deleteOrderButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.deleteOrderButton.Text = "Удалить";
-            this.deleteOrderButton.UseColumnTextForButtonValue = true;
-            this.deleteOrderButton.Width = 50;
-            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -242,7 +225,6 @@
         private MenuStrip menuStrip;
         private Panel clientPanelOrders;
         private StatusStrip statusStrip;
-        private DataGridViewTextBoxColumn uselLogin;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridView ordersGridView;
@@ -252,6 +234,5 @@
         private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
-        private DataGridViewButtonColumn deleteOrderButton;
     }
 }
