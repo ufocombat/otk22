@@ -26,10 +26,22 @@ namespace otk22
                     discountPercent = 0,
                     serviceId = 0
                 };
+
             }
             else { 
-                order = MyDb.getOrderById(id); 
+                order = MyDb.getOrderViewById(id); 
             }
+
+            userComboBox.DataSource = MyDb.getUsers();
+            serviceComboBox.DataSource = MyDb.getServices();
+
+            order.userLogin = (String)userComboBox.SelectedValue;
+            order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
+
+            Service s = MyDb.getServiceById(order.serviceId);
+            order.price= s.price;
+
+            order.calcTotalAmount();
         }
 
         private Boolean orderValidation()
@@ -67,7 +79,10 @@ namespace otk22
         {
             if (orderValidation())
             {
+                order.userLogin = (String)userComboBox.SelectedValue;
+                order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
                 order.discountPercent = discountUpDown.Value;
+
                 MyDb.insertOrder(order);
             }
         }
@@ -75,16 +90,19 @@ namespace otk22
         private void OrderForm_Load(object sender, EventArgs e)
         {
             discountUpDown.Value = order.discountPercent;
+            amountTextBox.Text = order.amount.ToString();
+            discountAmountTextBox.Text = order.discountAmount.ToString();
+            totalAmountTextBox.Text = order.totalAmount.ToString();
+        }
 
-            foreach (DataRow u in MyDb.getUsers().Rows)
-            {
-                userComboBox.Items.Add(u["name"].ToString());
-            }
+        private void discountUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            order.discountPercent = discountUpDown.Value;
+            order.calcTotalAmount();
 
-            foreach (DataRow s in MyDb.getServices().Rows)
-            {
-                serviceComboBox.Items.Add(s["name"].ToString());
-            }
+            amountTextBox.Text = order.amount.ToString();
+            discountAmountTextBox.Text = order.discountAmount.ToString();
+            totalAmountTextBox.Text = order.totalAmount.ToString();
         }
     }
 }

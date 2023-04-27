@@ -53,6 +53,8 @@ namespace otk22.db
             return dataTable;
         }
 
+        //Работа с пользователями
+
         public static DataTable getUsers()
         {
             return getSelectTable($"SELECT * FROM users");
@@ -63,14 +65,42 @@ namespace otk22.db
             return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
         }
 
-        public static DataTable getOrders()
-        {
-            return getSelectTable("SELECT * FROM orders");
-        }
+        //Работа с услугами
 
         public static DataTable getServices()
         {
             return getSelectTable("SELECT * FROM services");
+        }
+
+        public static Service getServiceById(Int32 id)
+        {
+            var s = getSelectTable($"SELECT * FROM services where id={id}");
+
+            return new Service()
+            {
+                id = Convert.ToInt32(s.Rows[0]["id"]),
+                name = (String)s.Rows[0]["name"],
+                price = Convert.ToInt32(s.Rows[0]["price"])
+            };
+        }
+
+        //Работа с ролями
+
+        public static DataTable getRoles()
+        {
+            return getSelectTable("SELECT * FROM roles");
+        }
+
+        public static DataTable getRole(String code)
+        {
+            return getSelectTable($"SELECT * FROM roles where code='{code}'");
+        }
+
+        //Работа с заказами
+
+        public static DataTable getOrders()
+        {
+            return getSelectTable("SELECT * FROM orders");
         }
 
         public static DataTable getUsersOrders()
@@ -87,7 +117,8 @@ namespace otk22.db
         {
             var o = getSelectTable($"SELECT * FROM orders where id='{id}");
 
-            return new Order() {
+            return new Order()
+            {
                 id = Convert.ToInt32(o.Rows[0]["id"]),
                 userLogin = (String)o.Rows[0]["userLogin"],
                 serviceId = Convert.ToInt32(o.Rows[0]["serviceId"]),
@@ -95,14 +126,18 @@ namespace otk22.db
             };
         }
 
-        public static DataTable getRoles()
+        public static Order getOrderViewById(Int32 id)
         {
-            return getSelectTable("SELECT * FROM roles");
-        }
+            var o = getSelectTable($"SELECT * FROM orders o, services s where o.serviceId=s.id id='{id}");
 
-        public static DataTable getRole(String code)
-        {
-            return getSelectTable($"SELECT * FROM roles where code='{code}'");
+            return new Order()
+            {
+                id = Convert.ToInt32(o.Rows[0]["id"]),
+                userLogin = (String)o.Rows[0]["userLogin"],
+                discountPercent = Convert.ToDecimal(o.Rows[0]["discountPercent"]),
+                serviceId = Convert.ToInt32(o.Rows[0]["serviceId"]),
+                amount = Convert.ToDecimal(o.Rows[0]["price"]),
+            };
         }
 
         public static void insertOrder(Order order)

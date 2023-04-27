@@ -48,6 +48,8 @@ namespace otk22
         {
             OrderForm orderForm = new OrderForm(user);
             orderForm.ShowDialog();
+
+            ordersGridView.DataSource = MyDb.getUsersOrders();
         }
     }
 }
