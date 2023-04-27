@@ -105,7 +105,7 @@ namespace otk22.db
 
         public static DataTable getUsersOrders()
         {
-            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id");
+            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id order by o.id");
         }
 
         public static DataTable getUserOrders(String login)

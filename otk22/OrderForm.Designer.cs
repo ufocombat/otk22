@@ -73,7 +73,7 @@
             this.cancelButton.Location = new System.Drawing.Point(303, 22);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 28);
-            this.cancelButton.TabIndex = 1;
+            this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -83,7 +83,7 @@
             this.saveButton.Location = new System.Drawing.Point(212, 22);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 28);
-            this.saveButton.TabIndex = 0;
+            this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -123,7 +123,7 @@
             this.userComboBox.Location = new System.Drawing.Point(26, 89);
             this.userComboBox.Name = "userComboBox";
             this.userComboBox.Size = new System.Drawing.Size(349, 23);
-            this.userComboBox.TabIndex = 25;
+            this.userComboBox.TabIndex = 0;
             this.userComboBox.ValueMember = "login";
             // 
             // errorNameLabel
@@ -154,7 +154,7 @@
             this.serviceComboBox.Location = new System.Drawing.Point(26, 154);
             this.serviceComboBox.Name = "serviceComboBox";
             this.serviceComboBox.Size = new System.Drawing.Size(349, 23);
-            this.serviceComboBox.TabIndex = 16;
+            this.serviceComboBox.TabIndex = 1;
             this.serviceComboBox.ValueMember = "id";
             // 
             // nameLabel
@@ -216,7 +216,7 @@
             this.discountUpDown.Location = new System.Drawing.Point(26, 58);
             this.discountUpDown.Name = "discountUpDown";
             this.discountUpDown.Size = new System.Drawing.Size(142, 23);
-            this.discountUpDown.TabIndex = 28;
+            this.discountUpDown.TabIndex = 2;
             this.discountUpDown.ValueChanged += new System.EventHandler(this.discountUpDown_ValueChanged);
             // 
             // label2

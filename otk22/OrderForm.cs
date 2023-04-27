@@ -83,7 +83,7 @@ namespace otk22
                 order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
                 order.discountPercent = discountUpDown.Value;
 
-                MyDb.insertOrder(order);
+                MyDb.insertOrder(order);  
             }
         }
 

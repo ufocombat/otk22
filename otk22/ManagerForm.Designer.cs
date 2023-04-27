@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.разлогинитьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteOrderButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -92,6 +94,13 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "mainMenu";
             // 
+            // новыйЗаказToolStripMenuItem
+            // 
+            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
+            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
+            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem_Click);
+            // 
             // clientPanelOrders
             // 
             this.clientPanelOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -118,7 +127,8 @@
             this.dataGridViewTextBoxColumn1,
             this.userLogin,
             this.dataGridViewTextBoxColumn2,
-            this.name});
+            this.name,
+            this.deleteOrderButton});
             this.ordersGridView.Location = new System.Drawing.Point(3, 0);
             this.ordersGridView.Margin = new System.Windows.Forms.Padding(0);
             this.ordersGridView.MultiSelect = false;
@@ -129,6 +139,34 @@
             this.ordersGridView.ShowEditingIcon = false;
             this.ordersGridView.Size = new System.Drawing.Size(800, 402);
             this.ordersGridView.TabIndex = 3;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripLogin});
+            this.statusStrip.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // stripLogin
+            // 
+            this.stripLogin.Name = "stripLogin";
+            this.stripLogin.Size = new System.Drawing.Size(34, 17);
+            this.stripLogin.Text = "login";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -159,40 +197,19 @@
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
-            // statusStrip
+            // deleteOrderButton
             // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stripLogin});
-            this.statusStrip.Location = new System.Drawing.Point(0, 402);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip.TabIndex = 0;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // stripLogin
-            // 
-            this.stripLogin.Name = "stripLogin";
-            this.stripLogin.Size = new System.Drawing.Size(34, 17);
-            this.stripLogin.Text = "login";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Заказ Но";
-            this.id.Name = "id";
-            // 
-            // discountPercent
-            // 
-            this.discountPercent.DataPropertyName = "discountPercent";
-            this.discountPercent.HeaderText = "Скидка (%)";
-            this.discountPercent.Name = "discountPercent";
-            // 
-            // новыйЗаказToolStripMenuItem
-            // 
-            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
-            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
-            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem_Click);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            this.deleteOrderButton.DefaultCellStyle = dataGridViewCellStyle1;
+            this.deleteOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteOrderButton.HeaderText = "";
+            this.deleteOrderButton.Name = "deleteOrderButton";
+            this.deleteOrderButton.ReadOnly = true;
+            this.deleteOrderButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.deleteOrderButton.Text = "Удалить";
+            this.deleteOrderButton.UseColumnTextForButtonValue = true;
+            this.deleteOrderButton.Width = 50;
             // 
             // ManagerForm
             // 
@@ -229,11 +246,12 @@
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridView ordersGridView;
+        private ToolStripStatusLabel stripLogin;
+        private ToolStripMenuItem новыйЗаказToolStripMenuItem;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
-        private ToolStripStatusLabel stripLogin;
-        private ToolStripMenuItem новыйЗаказToolStripMenuItem;
+        private DataGridViewButtonColumn deleteOrderButton;
     }
 }
