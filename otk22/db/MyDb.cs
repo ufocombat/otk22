@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using otk22.models;
 
 namespace otk22.db
 {
@@ -61,6 +62,19 @@ namespace otk22.db
         public static DataTable getUsersOrders()
         {
             return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id");
+        }
+
+        public static Order getOrder(Int32 id)
+        {
+            //Переделать
+            Order order = new Order()
+            {
+                id = 1,
+                userLogin = "roma",
+                discountPercent = 0,
+            };
+
+            return order;
         }
 
         public static DataTable getUserOrders(String login)

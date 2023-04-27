@@ -40,9 +40,10 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -83,7 +84,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.новыйЗаказToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -167,6 +169,12 @@
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // stripLogin
+            // 
+            this.stripLogin.Name = "stripLogin";
+            this.stripLogin.Size = new System.Drawing.Size(34, 17);
+            this.stripLogin.Text = "login";
+            // 
             // id
             // 
             this.id.DataPropertyName = "id";
@@ -179,11 +187,12 @@
             this.discountPercent.HeaderText = "Скидка (%)";
             this.discountPercent.Name = "discountPercent";
             // 
-            // stripLogin
+            // новыйЗаказToolStripMenuItem
             // 
-            this.stripLogin.Name = "stripLogin";
-            this.stripLogin.Size = new System.Drawing.Size(34, 17);
-            this.stripLogin.Text = "login";
+            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
+            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
+            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
+            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem_Click);
             // 
             // ManagerForm
             // 
@@ -225,5 +234,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
         private ToolStripStatusLabel stripLogin;
+        private ToolStripMenuItem новыйЗаказToolStripMenuItem;
     }
 }

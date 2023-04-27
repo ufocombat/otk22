@@ -12,7 +12,7 @@ namespace otk22
             InitializeComponent();
         }
 
-        private void enterButton_Click(object sender, EventArgs e)
+        private Boolean IsLoginValid()
         {
             int errors = 0;
 
@@ -38,12 +38,20 @@ namespace otk22
                 passwordLabelError.Visible = false;
             }
 
-            if (errors > 0)
+            return errors == 0;
+        }
+
+        private void enterButton_Click(object sender, EventArgs e)
+        {
+            /* if (!IsLoginValid())
             {
                 return;
-            }
+            }*/
 
-            DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
+            //DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
+            DataTable users = MyDb.getUsers("admin", "1");
+
+           
 
             if (users.Rows.Count < 1)
             {

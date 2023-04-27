@@ -43,5 +43,11 @@ namespace otk22
             Text = $"ОТК - Список заказов - Менеджер - {user.name}";
             statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
         }
+
+        private void новыйЗаказToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm();
+            orderForm.ShowDialog();
+        }
     }
 }
