@@ -98,7 +98,6 @@
             this.orderGroupBox.TabIndex = 2;
             this.orderGroupBox.TabStop = false;
             this.orderGroupBox.Text = "Общее";
-            this.orderGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // serviceLabel
             // 
@@ -175,7 +174,6 @@
             this.priceLabel.Size = new System.Drawing.Size(138, 15);
             this.priceLabel.TabIndex = 22;
             this.priceLabel.Text = "Стоимость услуги (руб)";
-            this.priceLabel.Click += new System.EventHandler(this.priceLabel_Click);
             // 
             // DiscountLabel
             // 
@@ -210,7 +208,6 @@
             this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 25;
             this.label1.Text = "Итого (руб)";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // label2
             // 
@@ -220,7 +217,6 @@
             this.label2.Size = new System.Drawing.Size(117, 15);
             this.label2.TabIndex = 27;
             this.label2.Text = "Сумма скидки (руб)";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox4
             // 
