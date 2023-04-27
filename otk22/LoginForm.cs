@@ -66,6 +66,9 @@ namespace otk22
 
             this.Hide();
 
+            passwordTextBox.Text = String.Empty;
+            
+
             if (employee)
             {
                 ManagerForm listForm = new ManagerForm(this, user);
@@ -85,8 +88,7 @@ namespace otk22
 
         private void LoginForm_VisibleChanged(object sender, EventArgs e)
         {
-            passwordTextBox.Text = String.Empty;
-            loginTextBox.Focus();
+           loginTextBox.Focus();
         }
     }
 }

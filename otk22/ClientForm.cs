@@ -29,7 +29,7 @@ namespace otk22
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-            Text = $"ОТК - Список заказов клиента - {user.name}";
+            Text = $"ОТК - Список заказов - Клиента - {user.name}";
             statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
         }
 
