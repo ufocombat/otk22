@@ -46,7 +46,7 @@ namespace otk22
 
         private void новыйЗаказToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OrderForm orderForm = new OrderForm();
+            OrderForm orderForm = new OrderForm(user);
             orderForm.ShowDialog();
         }
     }

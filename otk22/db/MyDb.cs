@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using otk22.models;
+using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.VisualBasic.Logging;
+using System.Xml.Linq;
+using System.Configuration;
 
 namespace otk22.db
 {
@@ -49,6 +53,11 @@ namespace otk22.db
             return dataTable;
         }
 
+        public static DataTable getUsers()
+        {
+            return getSelectTable($"SELECT * FROM users");
+        }
+
         public static DataTable getUsers(String login, String password)
         {
             return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
@@ -59,27 +68,31 @@ namespace otk22.db
             return getSelectTable("SELECT * FROM orders");
         }
 
+        public static DataTable getServices()
+        {
+            return getSelectTable("SELECT * FROM services");
+        }
+
         public static DataTable getUsersOrders()
         {
             return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id");
         }
 
-        public static Order getOrder(Int32 id)
-        {
-            //Переделать
-            Order order = new Order()
-            {
-                id = 1,
-                userLogin = "roma",
-                discountPercent = 0,
-            };
-
-            return order;
-        }
-
         public static DataTable getUserOrders(String login)
         {
             return getSelectTable($"SELECT o.id, o.status, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id and userLogin='{login}'");
+        }
+
+        public static Order getOrderById(Int32 id)
+        {
+            var o = getSelectTable($"SELECT * FROM orders where id='{id}");
+
+            return new Order() {
+                id = Convert.ToInt32(o.Rows[0]["id"]),
+                userLogin = (String)o.Rows[0]["userLogin"],
+                serviceId = Convert.ToInt32(o.Rows[0]["serviceId"]),
+                discountPercent = Convert.ToDecimal(o.Rows[0]["discountPercent"])
+            };
         }
 
         public static DataTable getRoles()
@@ -90,6 +103,29 @@ namespace otk22.db
         public static DataTable getRole(String code)
         {
             return getSelectTable($"SELECT * FROM roles where code='{code}'");
+        }
+
+        public static void insertOrder(Order order)
+        {
+            MySqlConnection con = getSqlConnection();
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = "insert into orders(serviceId,userLogin,discountPercent) VALUES(@serviceId,@userLogin,@discountPercent)";
+
+            com.Parameters.AddWithValue("@serviceId", order.serviceId);
+            com.Parameters.AddWithValue("@userLogin", order.userLogin);
+            com.Parameters.AddWithValue("@discountPercent", order.discountPercent);
+
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.Close();
         }
     }
 }
