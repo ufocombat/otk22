@@ -42,6 +42,7 @@
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.amountGroupBox = new System.Windows.Forms.GroupBox();
+            this.discounrLabelError = new System.Windows.Forms.Label();
             this.discountUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.discountAmountTextBox = new System.Windows.Forms.TextBox();
@@ -119,6 +120,7 @@
             // userComboBox
             // 
             this.userComboBox.DisplayMember = "name";
+            this.userComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userComboBox.FormattingEnabled = true;
             this.userComboBox.Location = new System.Drawing.Point(26, 89);
             this.userComboBox.Name = "userComboBox";
@@ -149,13 +151,16 @@
             // 
             // serviceComboBox
             // 
+            this.serviceComboBox.BackColor = System.Drawing.SystemColors.Window;
             this.serviceComboBox.DisplayMember = "name";
+            this.serviceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceComboBox.FormattingEnabled = true;
             this.serviceComboBox.Location = new System.Drawing.Point(26, 154);
             this.serviceComboBox.Name = "serviceComboBox";
             this.serviceComboBox.Size = new System.Drawing.Size(349, 23);
             this.serviceComboBox.TabIndex = 1;
             this.serviceComboBox.ValueMember = "id";
+            this.serviceComboBox.SelectedIndexChanged += new System.EventHandler(this.serviceComboBox_SelectedIndexChanged);
             // 
             // nameLabel
             // 
@@ -196,6 +201,7 @@
             // 
             // amountGroupBox
             // 
+            this.amountGroupBox.Controls.Add(this.discounrLabelError);
             this.amountGroupBox.Controls.Add(this.discountUpDown);
             this.amountGroupBox.Controls.Add(this.label2);
             this.amountGroupBox.Controls.Add(this.discountAmountTextBox);
@@ -210,6 +216,18 @@
             this.amountGroupBox.TabIndex = 3;
             this.amountGroupBox.TabStop = false;
             this.amountGroupBox.Text = "Стоимость";
+            // 
+            // discounrLabelError
+            // 
+            this.discounrLabelError.AutoSize = true;
+            this.discounrLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.discounrLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
+            this.discounrLabelError.Location = new System.Drawing.Point(26, 84);
+            this.discounrLabelError.Name = "discounrLabelError";
+            this.discounrLabelError.Size = new System.Drawing.Size(89, 13);
+            this.discounrLabelError.TabIndex = 27;
+            this.discounrLabelError.Text = "ошибка скидки";
+            this.discounrLabelError.Visible = false;
             // 
             // discountUpDown
             // 
@@ -286,6 +304,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма заказа";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OrderForm_FormClosing);
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.buttonPanel.ResumeLayout(false);
             this.orderGroupBox.ResumeLayout(false);
@@ -320,5 +339,6 @@
         private Label serviceLabelError;
         private NumericUpDown discountUpDown;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Label discounrLabelError;
     }
 }

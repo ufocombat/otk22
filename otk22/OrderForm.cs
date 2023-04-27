@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using otk22.db;
 using otk22.models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace otk22
 {
@@ -39,8 +40,8 @@ namespace otk22
             order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
 
             Service s = MyDb.getServiceById(order.serviceId);
+            
             order.price= s.price;
-
             order.calcTotalAmount();
         }
 
@@ -72,6 +73,18 @@ namespace otk22
                 serviceLabelError.Visible = false;
             }
 
+            if (discountUpDown.Value < 10)
+            {
+                discounrLabelError.Text = "Минимальная скидка 10%";
+                discounrLabelError.Visible = true;
+
+                errors++;
+            }
+            else
+            {
+                serviceLabelError.Visible = false;
+            }
+
             return errors <= 0;
         }
 
@@ -93,6 +106,15 @@ namespace otk22
             amountTextBox.Text = order.amount.ToString();
             discountAmountTextBox.Text = order.discountAmount.ToString();
             totalAmountTextBox.Text = order.totalAmount.ToString();
+
+            userComboBox.Focus();
+        }
+
+        private void refreshForm()
+        {
+            amountTextBox.Text = order.amount.ToString();
+            discountAmountTextBox.Text = order.discountAmount.ToString();
+            totalAmountTextBox.Text = order.totalAmount.ToString();
         }
 
         private void discountUpDown_ValueChanged(object sender, EventArgs e)
@@ -100,9 +122,42 @@ namespace otk22
             order.discountPercent = discountUpDown.Value;
             order.calcTotalAmount();
 
-            amountTextBox.Text = order.amount.ToString();
-            discountAmountTextBox.Text = order.discountAmount.ToString();
-            totalAmountTextBox.Text = order.totalAmount.ToString();
+            refreshForm();
+        }
+
+        private void serviceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
+
+            Service s = MyDb.getServiceById(order.serviceId);
+
+            order.price = s.price;
+            order.calcTotalAmount();
+
+            refreshForm();
+        }
+
+        private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !orderValidation();
         }
     }
 }
+
+
+/*private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+{
+    // Determine if text has changed in the textbox by comparing to original text.
+    if (textBox1.Text != strMyOriginalText)
+    {
+        // Display a MsgBox asking the user to save changes or abort.
+        if (MessageBox.Show("Do you want to save changes to your text?", "My Application",
+           MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {
+            // Cancel the Closing event from closing the form.
+            e.Cancel = true;
+            // Call method to save file...
+        }
+    }
+}
+*/
