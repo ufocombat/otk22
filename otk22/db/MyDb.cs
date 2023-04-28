@@ -128,7 +128,7 @@ namespace otk22.db
 
         public static Order getOrderViewById(Int32 id)
         {
-            var o = getSelectTable($"SELECT * FROM orders o, services s where o.serviceId=s.id id='{id}");
+            var o = getSelectTable($"SELECT * FROM orders o, services s where o.serviceId=s.id and o.id={id}");
 
             return new Order()
             {

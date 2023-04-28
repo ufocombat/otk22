@@ -15,34 +15,18 @@ namespace otk22
 {
     public partial class OrderForm : Form
     {
-        private Order order;
+        private Order order = new Order();
+        private User user;
 
-        public OrderForm(User user, Int32 id=0)
+        public OrderForm(User user, Int32 id = 0)
         {
             InitializeComponent();
 
-            if (id == 0) {
-                order = new Order() { 
-                    userLogin = user.login,
-                    discountPercent = 0,
-                    serviceId = 0
-                };
-
-            }
-            else { 
-                order = MyDb.getOrderViewById(id); 
-            }
+            this.order.id = id;
+            this.user = user;
 
             userComboBox.DataSource = MyDb.getUsers();
             serviceComboBox.DataSource = MyDb.getServices();
-
-            order.userLogin = (String)userComboBox.SelectedValue;
-            order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
-
-            Service s = MyDb.getServiceById(order.serviceId);
-            
-            order.price= s.price;
-            order.calcTotalAmount();
         }
 
         private Boolean orderValidation()
@@ -90,6 +74,27 @@ namespace otk22
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
+            if (order.id == 0)
+            {
+                orderIdLabel.Text = "Новый заказ";
+                order.discountPercent = 0;
+                order.userLogin = (String)userComboBox.SelectedValue;//?
+                order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
+            }
+            else
+            {
+                orderIdLabel.Text = $"Заказ Но. {order.id}";
+                order = MyDb.getOrderViewById(order.id);
+
+                userComboBox.SelectedValue = order.userLogin;
+                serviceComboBox.SelectedValue = order.serviceId;
+            }
+
+            Service s = MyDb.getServiceById(order.serviceId);
+
+            order.price = s.price;
+            order.calcTotalAmount();
+
             discountUpDown.Value = order.discountPercent;
             amountTextBox.Text = order.amount.ToString();
             discountAmountTextBox.Text = order.discountAmount.ToString();
@@ -115,6 +120,7 @@ namespace otk22
 
         private void serviceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
 
             Service s = MyDb.getServiceById(order.serviceId);

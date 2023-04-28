@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx;
 using otk22.db;
 using otk22.models;
 
@@ -17,6 +18,7 @@ namespace otk22
     {
         public readonly User user;
         public readonly Form? loginForm;
+        private Int32 orderId = -1;
 
         public ManagerForm(Form loginForm, User user)
         {
@@ -50,7 +52,24 @@ namespace otk22
 
             if (orderForm.ShowDialog(this) == DialogResult.OK)
             {
-               ordersGridView.DataSource = MyDb.getUsersOrders();
+                ordersGridView.DataSource = MyDb.getUsersOrders();
+            }
+
+            orderForm.Dispose();
+        }
+
+        private void ordersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            orderId = Convert.ToInt32(ordersGridView.Rows[e.RowIndex].Cells[0].Value);
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm(user, orderId);
+
+            if (orderForm.ShowDialog(this) == DialogResult.OK)
+            {
+                ordersGridView.DataSource = MyDb.getUsersOrders();
             }
 
             orderForm.Dispose();

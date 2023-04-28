@@ -21,7 +21,7 @@ namespace otk22.models
         public void calcTotalAmount()
         {
             amount = price;
-            discountAmount = price * discountPercent / 100;
+            discountAmount = amount * discountPercent / 100;
             totalAmount = amount - discountAmount;
         }
     }

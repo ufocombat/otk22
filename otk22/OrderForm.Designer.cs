@@ -285,10 +285,12 @@
             this.Controls.Add(this.orderGroupBox);
             this.Controls.Add(this.buttonPanel);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(438, 550);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(438, 550);
             this.Name = "OrderForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Форма заказа";
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.buttonPanel.ResumeLayout(false);
