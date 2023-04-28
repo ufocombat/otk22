@@ -33,7 +33,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйЗаказToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +48,6 @@
             this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -86,7 +89,6 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.новыйЗаказToolStripMenuItem,
             this.изменитьToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -94,12 +96,41 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "mainMenu";
             // 
-            // новыйЗаказToolStripMenuItem
+            // изменитьToolStripMenuItem
             // 
-            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
-            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
-            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem_Click);
+            this.изменитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новыйЗаказToolStripMenuItem1,
+            this.изменитьToolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.удалитьToolStripMenuItem});
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.изменитьToolStripMenuItem.Text = "Заказ";
+            // 
+            // новыйЗаказToolStripMenuItem1
+            // 
+            this.новыйЗаказToolStripMenuItem1.Name = "новыйЗаказToolStripMenuItem1";
+            this.новыйЗаказToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.новыйЗаказToolStripMenuItem1.Text = "Новый заказ";
+            this.новыйЗаказToolStripMenuItem1.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem1_Click);
+            // 
+            // изменитьToolStripMenuItem1
+            // 
+            this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem1.Text = "Изменить";
+            this.изменитьToolStripMenuItem1.Click += new System.EventHandler(this.изменитьToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // clientPanelOrders
             // 
@@ -197,13 +228,6 @@
             this.discountPercent.HeaderText = "Скидка (%)";
             this.discountPercent.Name = "discountPercent";
             // 
-            // изменитьToolStripMenuItem
-            // 
-            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.изменитьToolStripMenuItem.Text = "Изменить";
-            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
-            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -239,11 +263,14 @@
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridView ordersGridView;
         private ToolStripStatusLabel stripLogin;
-        private ToolStripMenuItem новыйЗаказToolStripMenuItem;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn userLogin;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
         private ToolStripMenuItem изменитьToolStripMenuItem;
+        private ToolStripMenuItem новыйЗаказToolStripMenuItem1;
+        private ToolStripMenuItem изменитьToolStripMenuItem1;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem удалитьToolStripMenuItem;
     }
 }

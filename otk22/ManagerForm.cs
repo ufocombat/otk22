@@ -46,7 +46,12 @@ namespace otk22
             statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
         }
 
-        private void новыйЗаказToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ordersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            orderId = Convert.ToInt32(ordersGridView.Rows[e.RowIndex].Cells[0].Value);
+        }
+
+        private void новыйЗаказToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm(user);
 
@@ -58,12 +63,7 @@ namespace otk22
             orderForm.Dispose();
         }
 
-        private void ordersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            orderId = Convert.ToInt32(ordersGridView.Rows[e.RowIndex].Cells[0].Value);
-        }
-
-        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void изменитьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm(user, orderId);
 

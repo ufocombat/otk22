@@ -49,6 +49,7 @@
             this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.buttonPanel.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
             this.amountGroupBox.SuspendLayout();
@@ -60,6 +61,7 @@
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
+            this.buttonPanel.Controls.Add(this.deleteButton);
             this.buttonPanel.Controls.Add(this.cancelButton);
             this.buttonPanel.Controls.Add(this.saveButton);
             this.buttonPanel.Location = new System.Drawing.Point(-1, 442);
@@ -70,7 +72,7 @@
             // cancelButton
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(303, 22);
+            this.cancelButton.Location = new System.Drawing.Point(244, 22);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 28);
             this.cancelButton.TabIndex = 4;
@@ -80,7 +82,7 @@
             // saveButton
             // 
             this.saveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.saveButton.Location = new System.Drawing.Point(212, 22);
+            this.saveButton.Location = new System.Drawing.Point(163, 22);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 28);
             this.saveButton.TabIndex = 3;
@@ -275,6 +277,17 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
+            // deleteButton
+            // 
+            this.deleteButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.deleteButton.Location = new System.Drawing.Point(325, 22);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 28);
+            this.deleteButton.TabIndex = 5;
+            this.deleteButton.Text = "Удалить";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -326,5 +339,6 @@
         private Label serviceLabelError;
         private NumericUpDown discountUpDown;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button deleteButton;
     }
 }

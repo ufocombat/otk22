@@ -162,5 +162,26 @@ namespace otk22.db
 
             con.Close();
         }
+
+        public static void deleteOrderById(Int32 id)
+        {
+            MySqlConnection con = getSqlConnection();
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = $"delete from orders where id={id}";
+
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.Close();
+        }
+
+        
     }
 }
