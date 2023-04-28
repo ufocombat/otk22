@@ -51,13 +51,18 @@ namespace otk22
             orderId = Convert.ToInt32(ordersGridView.Rows[e.RowIndex].Cells[0].Value);
         }
 
+        private void refreOrdersList()
+        {
+            ordersGridView.DataSource = MyDb.getUsersOrders();
+        }
+
         private void новыйЗаказToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm(user);
 
             if (orderForm.ShowDialog(this) == DialogResult.OK)
             {
-                ordersGridView.DataSource = MyDb.getUsersOrders();
+                refreOrdersList();
             }
 
             orderForm.Dispose();
@@ -69,10 +74,16 @@ namespace otk22
 
             if (orderForm.ShowDialog(this) == DialogResult.OK)
             {
-                ordersGridView.DataSource = MyDb.getUsersOrders();
+                refreOrdersList();
             }
 
             orderForm.Dispose();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MyDb.deleteOrderById(orderId);
+            refreOrdersList();
         }
     }
 }

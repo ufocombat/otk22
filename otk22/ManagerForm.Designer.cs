@@ -134,6 +134,7 @@
             this.удалитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // clientPanelOrders
             // 
