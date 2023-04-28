@@ -64,11 +64,18 @@ namespace otk22
         {
             if (orderValidation())
             {
-                order.userLogin = (String)userComboBox.SelectedValue;
-                order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
-                order.discountPercent = discountUpDown.Value;
+                 order.userLogin = (String)userComboBox.SelectedValue;
+                 order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
+                 order.discountPercent = discountUpDown.Value;
 
-                MyDb.insertOrder(order);  
+                if (order.id == 0)
+                {
+                    MyDb.insertOrder(order);
+                }
+                else
+                {
+                    MyDb.updateOrder(order);
+                }
             }
         }
 

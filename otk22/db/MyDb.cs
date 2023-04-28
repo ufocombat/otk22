@@ -182,6 +182,29 @@ namespace otk22.db
             con.Close();
         }
 
-        
+        public static void updateOrder(Order order)
+        {
+            MySqlConnection con = getSqlConnection();
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = $"update orders set serviceId=@serviceId, userLogin=@userLogin, discountPercent=@discountPercent where id={order.id}";
+
+            com.Parameters.AddWithValue("@serviceId", order.serviceId);
+            com.Parameters.AddWithValue("@userLogin", order.userLogin);
+            com.Parameters.AddWithValue("@discountPercent", order.discountPercent);
+
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.Close();
+        }
+
+
     }
 }

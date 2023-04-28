@@ -110,26 +110,29 @@
             // новыйЗаказToolStripMenuItem1
             // 
             this.новыйЗаказToolStripMenuItem1.Name = "новыйЗаказToolStripMenuItem1";
-            this.новыйЗаказToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.новыйЗаказToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.новыйЗаказToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.новыйЗаказToolStripMenuItem1.Text = "Новый заказ";
             this.новыйЗаказToolStripMenuItem1.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem1_Click);
             // 
             // изменитьToolStripMenuItem1
             // 
             this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
-            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
             this.изменитьToolStripMenuItem1.Text = "Изменить";
             this.изменитьToolStripMenuItem1.Click += new System.EventHandler(this.изменитьToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(187, 6);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
             // clientPanelOrders
