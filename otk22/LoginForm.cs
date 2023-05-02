@@ -43,13 +43,13 @@ namespace otk22
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            /* if (!IsLoginValid())
+            if (!IsLoginValid())
             {
                 return;
-            }*/
+            }
 
-            //DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
-            DataTable users = MyDb.getUsers("admin", "1");
+            DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
+            //DataTable users = MyDb.getUsers("admin", "1");
 
            
 
