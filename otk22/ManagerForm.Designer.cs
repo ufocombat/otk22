@@ -174,6 +174,7 @@
             this.ordersGridView.Size = new System.Drawing.Size(800, 402);
             this.ordersGridView.TabIndex = 3;
             this.ordersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGridView_CellContentClick);
+            this.ordersGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.изменитьToolStripMenuItem1_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
