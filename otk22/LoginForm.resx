@@ -125,6 +125,16 @@
         RK5CYII=
 </value>
   </data>
+  <data name="pasVisOffButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DQAACw0B7QfALAAAAN1JREFUOE/N0mFtAkEQxfGTUAmVgAQk1AE4AAfUQSVQB+AACUhAAhLg/e4YsuRC
+        IJQPfck/N3s782Z277p/o2VYDeFr+gyHUCaLsAveHcM+/AR5d2VT8ixML3wEmoTv0DYZyYZOkpgoNgXm
+        gTSRMzLRTaGiOg4Tse7WckgOk1r3ktCebxNOgQl9hfUQ9lJssqssWsffwKBMTLENJYY3BjVmTcGsDNpJ
+        qI7YTtzLRbUbnsaG97o6v7gudSSdJSiSZG06t+4Ti/FQil1kfUaG9R88ZXBPdVd/NjHdO9R1Zz5KNzZJ
+        1jpcAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>165, 17</value>
   </metadata>

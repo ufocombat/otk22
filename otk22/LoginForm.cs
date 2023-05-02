@@ -98,5 +98,22 @@ namespace otk22
         {
            loginTextBox.Focus();
         }
+
+        private void pasVisOnButton_Click(object sender, EventArgs e)
+        {
+            if (passwordTextBox.PasswordChar == '*')
+            {
+                passwordTextBox.PasswordChar = default(char);
+                pasVisOffButton.Visible = false;
+                pasVisOnButton.Visible = true;
+            }
+            else
+            {
+                passwordTextBox.PasswordChar = '*';
+                pasVisOffButton.Visible = true;
+                pasVisOnButton.Visible = false;
+            }
+        }
+
     }
 }

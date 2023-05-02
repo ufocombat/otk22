@@ -34,6 +34,8 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.pasVisOffButton = new System.Windows.Forms.Button();
+            this.pasVisOnButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.enterButton = new System.Windows.Forms.Button();
             this.passwordLabelError = new System.Windows.Forms.Label();
@@ -85,6 +87,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            this.panelLogin.Controls.Add(this.pasVisOffButton);
+            this.panelLogin.Controls.Add(this.pasVisOnButton);
             this.panelLogin.Controls.Add(this.exitButton);
             this.panelLogin.Controls.Add(this.enterButton);
             this.panelLogin.Controls.Add(this.passwordLabelError);
@@ -98,6 +102,27 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(376, 337);
             this.panelLogin.TabIndex = 7;
+            // 
+            // pasVisOffButton
+            // 
+            this.pasVisOffButton.Image = ((System.Drawing.Image)(resources.GetObject("pasVisOffButton.Image")));
+            this.pasVisOffButton.Location = new System.Drawing.Point(237, 197);
+            this.pasVisOffButton.Name = "pasVisOffButton";
+            this.pasVisOffButton.Size = new System.Drawing.Size(27, 23);
+            this.pasVisOffButton.TabIndex = 17;
+            this.pasVisOffButton.UseVisualStyleBackColor = true;
+            this.pasVisOffButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
+            // 
+            // pasVisOnButton
+            // 
+            this.pasVisOnButton.Image = global::otk22.Properties.Resources.vis_on16;
+            this.pasVisOnButton.Location = new System.Drawing.Point(237, 198);
+            this.pasVisOnButton.Name = "pasVisOnButton";
+            this.pasVisOnButton.Size = new System.Drawing.Size(27, 23);
+            this.pasVisOnButton.TabIndex = 16;
+            this.pasVisOnButton.UseVisualStyleBackColor = true;
+            this.pasVisOnButton.Visible = false;
+            this.pasVisOnButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
             // 
             // exitButton
             // 
@@ -241,5 +266,7 @@
         private Label passwordLabelError;
         private Button exitButton;
         private System.Windows.Forms.Timer timer1;
+        private Button pasVisOffButton;
+        private Button pasVisOnButton;
     }
 }
