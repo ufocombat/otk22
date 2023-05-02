@@ -205,6 +205,6 @@ namespace otk22.db
             con.Close();
         }
 
-
+        //INSERT INTO otk.orders_arch(id,userLogin,serviceId,discountPercent) SELECT id,userLogin,serviceId,discountPercent FROM otk.orders o WHERE o.id=2;
     }
 }

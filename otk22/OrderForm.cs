@@ -86,7 +86,7 @@ namespace otk22
             {
                 orderIdLabel.Text = "Новый заказ";
                 saveButton.Text = "Создать";
-                deleteButton.Visible= false;
+                funcButton.Visible= false;
 
                 order.discountPercent = 0;
                 order.userLogin = (String)userComboBox.SelectedValue;//?
@@ -146,10 +146,25 @@ namespace otk22
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show($"Удалить заказ {order.id}?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
+            
+        }
+
+        private void funcButton_Click(object sender, EventArgs e)
+        {
+            funcContextMenuStrip.Show(buttonPanel, new Point(funcButton.Location.X, funcButton.Location.Y-50));
+        }
+
+        private void funcContextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Удалить заказ {order.id}?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                   == System.Windows.Forms.DialogResult.Yes)
             {
-              MyDb.deleteOrderById(order.id);
+                MyDb.deleteOrderById(order.id);
             }
         }
     }

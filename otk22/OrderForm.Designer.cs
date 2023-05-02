@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonPanel = new System.Windows.Forms.Panel();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.funcButton = new System.Windows.Forms.Button();
+            this.funcContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.orderGroupBox = new System.Windows.Forms.GroupBox();
@@ -51,6 +55,7 @@
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.buttonPanel.SuspendLayout();
+            this.funcContextMenuStrip.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
             this.amountGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.discountUpDown)).BeginInit();
@@ -61,7 +66,7 @@
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
-            this.buttonPanel.Controls.Add(this.deleteButton);
+            this.buttonPanel.Controls.Add(this.funcButton);
             this.buttonPanel.Controls.Add(this.cancelButton);
             this.buttonPanel.Controls.Add(this.saveButton);
             this.buttonPanel.Location = new System.Drawing.Point(-1, 442);
@@ -69,16 +74,39 @@
             this.buttonPanel.Size = new System.Drawing.Size(424, 68);
             this.buttonPanel.TabIndex = 1;
             // 
-            // deleteButton
+            // funcButton
             // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Location = new System.Drawing.Point(174, 22);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 28);
-            this.deleteButton.TabIndex = 5;
-            this.deleteButton.Text = "Удалить";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.funcButton.ContextMenuStrip = this.funcContextMenuStrip;
+            this.funcButton.Location = new System.Drawing.Point(240, 22);
+            this.funcButton.Name = "funcButton";
+            this.funcButton.Size = new System.Drawing.Size(90, 28);
+            this.funcButton.TabIndex = 6;
+            this.funcButton.Text = "&Функции ▲";
+            this.funcButton.UseVisualStyleBackColor = true;
+            this.funcButton.Click += new System.EventHandler(this.funcButton_Click);
+            // 
+            // funcContextMenuStrip
+            // 
+            this.funcContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.удалитьToolStripMenuItem});
+            this.funcContextMenuStrip.Name = "contextMenuStrip1";
+            this.funcContextMenuStrip.Size = new System.Drawing.Size(153, 48);
+            this.funcContextMenuStrip.Text = "Удалить";
+            this.funcContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.funcContextMenuStrip_Opening);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "Архивировать";
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // cancelButton
             // 
@@ -88,18 +116,18 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 28);
             this.cancelButton.TabIndex = 4;
-            this.cancelButton.Text = "Отмена";
+            this.cancelButton.Text = "О&тмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.saveButton.Location = new System.Drawing.Point(255, 22);
+            this.saveButton.Location = new System.Drawing.Point(159, 22);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 28);
             this.saveButton.TabIndex = 3;
-            this.saveButton.Text = "Сохранить";
+            this.saveButton.Text = "&Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -309,6 +337,7 @@
             this.Text = "Форма заказа";
             this.Load += new System.EventHandler(this.OrderForm_Load);
             this.buttonPanel.ResumeLayout(false);
+            this.funcContextMenuStrip.ResumeLayout(false);
             this.orderGroupBox.ResumeLayout(false);
             this.orderGroupBox.PerformLayout();
             this.amountGroupBox.ResumeLayout(false);
@@ -341,6 +370,9 @@
         private Label serviceLabelError;
         private NumericUpDown discountUpDown;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Button deleteButton;
+        private Button funcButton;
+        private ContextMenuStrip funcContextMenuStrip;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem удалитьToolStripMenuItem;
     }
 }
