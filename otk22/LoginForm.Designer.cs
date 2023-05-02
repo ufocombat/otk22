@@ -48,10 +48,12 @@
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mySqlCommand1
@@ -88,6 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            this.panelLogin.Controls.Add(this.pictureBox2);
             this.panelLogin.Controls.Add(this.passCheckBox);
             this.panelLogin.Controls.Add(this.pasVisOffButton);
             this.panelLogin.Controls.Add(this.pasVisOnButton);
@@ -119,12 +122,12 @@
             // pasVisOffButton
             // 
             this.pasVisOffButton.Image = ((System.Drawing.Image)(resources.GetObject("pasVisOffButton.Image")));
-            this.pasVisOffButton.Location = new System.Drawing.Point(238, 174);
+            this.pasVisOffButton.Location = new System.Drawing.Point(238, 175);
             this.pasVisOffButton.Name = "pasVisOffButton";
             this.pasVisOffButton.Size = new System.Drawing.Size(27, 23);
             this.pasVisOffButton.TabIndex = 17;
             this.pasVisOffButton.UseVisualStyleBackColor = true;
-            this.pasVisOffButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
+            this.pasVisOffButton.Click += new System.EventHandler(this.passCheckBox_CheckedChanged);
             // 
             // pasVisOnButton
             // 
@@ -135,7 +138,7 @@
             this.pasVisOnButton.TabIndex = 16;
             this.pasVisOnButton.UseVisualStyleBackColor = true;
             this.pasVisOnButton.Visible = false;
-            this.pasVisOnButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
+            this.pasVisOnButton.Click += new System.EventHandler(this.passCheckBox_CheckedChanged);
             // 
             // exitButton
             // 
@@ -236,6 +239,16 @@
             this.loginLabel.TabIndex = 7;
             this.loginLabel.Text = "Логин";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::otk22.Properties.Resources.login20;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 112);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.enterButton;
@@ -259,6 +272,7 @@
             this.panelLogin.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +296,6 @@
         private Button pasVisOffButton;
         private Button pasVisOnButton;
         private CheckBox passCheckBox;
+        private PictureBox pictureBox2;
     }
 }
