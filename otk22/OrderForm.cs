@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using otk22.db;
 using otk22.models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace otk22
 {
@@ -145,7 +146,11 @@ namespace otk22
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            MyDb.deleteOrderById(order.id);
+            if (MessageBox.Show($"Удалить заказ {order.id}?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) 
+                  == System.Windows.Forms.DialogResult.Yes)
+            {
+              MyDb.deleteOrderById(order.id);
+            }
         }
     }
 }

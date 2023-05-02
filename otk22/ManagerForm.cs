@@ -82,8 +82,12 @@ namespace otk22
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var ordId = orderId;
             MyDb.deleteOrderById(orderId);
             refreOrdersList();
+
+            MessageBox.Show($"Заказ {ordId} удален", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
