@@ -99,21 +99,21 @@ namespace otk22
            loginTextBox.Focus();
         }
 
-        private void pasVisOnButton_Click(object sender, EventArgs e)
+        private void showPassword()
         {
-            if (passwordTextBox.PasswordChar == '*')
-            {
-                passwordTextBox.PasswordChar = default(char);
-                pasVisOffButton.Visible = false;
-                pasVisOnButton.Visible = true;
-            }
-            else
-            {
-                passwordTextBox.PasswordChar = '*';
-                pasVisOffButton.Visible = true;
-                pasVisOnButton.Visible = false;
-            }
+           passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
+           pasVisOffButton.Visible = passwordTextBox.UseSystemPasswordChar;
+           pasVisOnButton.Visible = !passwordTextBox.UseSystemPasswordChar;
         }
 
+        private void pasVisOnButton_Click(object sender, EventArgs e)
+        {
+            showPassword();
+        }
+
+        private void passCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            showPassword();
+        }
     }
 }

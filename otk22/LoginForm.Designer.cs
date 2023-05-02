@@ -34,6 +34,7 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.passCheckBox = new System.Windows.Forms.CheckBox();
             this.pasVisOffButton = new System.Windows.Forms.Button();
             this.pasVisOnButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            this.panelLogin.Controls.Add(this.passCheckBox);
             this.panelLogin.Controls.Add(this.pasVisOffButton);
             this.panelLogin.Controls.Add(this.pasVisOnButton);
             this.panelLogin.Controls.Add(this.exitButton);
@@ -103,10 +105,21 @@
             this.panelLogin.Size = new System.Drawing.Size(376, 337);
             this.panelLogin.TabIndex = 7;
             // 
+            // passCheckBox
+            // 
+            this.passCheckBox.AutoSize = true;
+            this.passCheckBox.Location = new System.Drawing.Point(52, 222);
+            this.passCheckBox.Name = "passCheckBox";
+            this.passCheckBox.Size = new System.Drawing.Size(117, 19);
+            this.passCheckBox.TabIndex = 18;
+            this.passCheckBox.Text = "показать пароль";
+            this.passCheckBox.UseVisualStyleBackColor = true;
+            this.passCheckBox.CheckedChanged += new System.EventHandler(this.passCheckBox_CheckedChanged);
+            // 
             // pasVisOffButton
             // 
             this.pasVisOffButton.Image = ((System.Drawing.Image)(resources.GetObject("pasVisOffButton.Image")));
-            this.pasVisOffButton.Location = new System.Drawing.Point(237, 197);
+            this.pasVisOffButton.Location = new System.Drawing.Point(238, 174);
             this.pasVisOffButton.Name = "pasVisOffButton";
             this.pasVisOffButton.Size = new System.Drawing.Size(27, 23);
             this.pasVisOffButton.TabIndex = 17;
@@ -116,7 +129,7 @@
             // pasVisOnButton
             // 
             this.pasVisOnButton.Image = global::otk22.Properties.Resources.vis_on16;
-            this.pasVisOnButton.Location = new System.Drawing.Point(237, 198);
+            this.pasVisOnButton.Location = new System.Drawing.Point(238, 175);
             this.pasVisOnButton.Name = "pasVisOnButton";
             this.pasVisOnButton.Size = new System.Drawing.Size(27, 23);
             this.pasVisOnButton.TabIndex = 16;
@@ -150,7 +163,7 @@
             this.passwordLabelError.AutoSize = true;
             this.passwordLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.passwordLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
-            this.passwordLabelError.Location = new System.Drawing.Point(51, 224);
+            this.passwordLabelError.Location = new System.Drawing.Point(52, 201);
             this.passwordLabelError.Name = "passwordLabelError";
             this.passwordLabelError.Size = new System.Drawing.Size(109, 13);
             this.passwordLabelError.TabIndex = 13;
@@ -160,7 +173,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(51, 180);
+            this.passwordLabel.Location = new System.Drawing.Point(52, 157);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(49, 15);
             this.passwordLabel.TabIndex = 12;
@@ -168,11 +181,11 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(51, 198);
+            this.passwordTextBox.Location = new System.Drawing.Point(52, 175);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(180, 23);
             this.passwordTextBox.TabIndex = 11;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // panelTop
             // 
@@ -200,7 +213,7 @@
             this.loginLabelError.AutoSize = true;
             this.loginLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loginLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
-            this.loginLabelError.Location = new System.Drawing.Point(51, 161);
+            this.loginLabelError.Location = new System.Drawing.Point(52, 138);
             this.loginLabelError.Name = "loginLabelError";
             this.loginLabelError.Size = new System.Drawing.Size(86, 13);
             this.loginLabelError.TabIndex = 10;
@@ -209,7 +222,7 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(51, 135);
+            this.loginTextBox.Location = new System.Drawing.Point(52, 112);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(180, 23);
             this.loginTextBox.TabIndex = 8;
@@ -217,7 +230,7 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(51, 117);
+            this.loginLabel.Location = new System.Drawing.Point(52, 94);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(41, 15);
             this.loginLabel.TabIndex = 7;
@@ -268,5 +281,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button pasVisOffButton;
         private Button pasVisOnButton;
+        private CheckBox passCheckBox;
     }
 }
