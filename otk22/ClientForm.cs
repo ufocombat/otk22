@@ -24,7 +24,7 @@ namespace otk22
             this.loginForm = loginForm;
             this.user = user;
 
-            ordersGridView.DataSource = MyDb.getUserOrders(user.login);
+            ordersGridView.DataSource = MyDb.getUserOrders(user.login!);
         }
 
         private void ClientForm_Load(object sender, EventArgs e)

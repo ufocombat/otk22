@@ -99,6 +99,11 @@ namespace otk22
            loginTextBox.Focus();
         }
 
+        private void pasVisOnButton_Click(object sender, EventArgs e)
+        {
+            passCheckBox.Checked = passwordTextBox.UseSystemPasswordChar;
+        }
+
         private void passCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;

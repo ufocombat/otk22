@@ -8,10 +8,10 @@ namespace otk22.models
 {
     public class User
     {
-        public String login;
-        public String name;
+        public String? login;
+        public String? name;
         public Int32  customerId;
-        public String roleCode;
-        public String password;
+        public String? roleCode;
+        public String? password;
     }
 }

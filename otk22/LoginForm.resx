@@ -125,6 +125,16 @@
         RK5CYII=
 </value>
   </data>
+  <data name="passPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAP5JREFUOE/t
+        069rQlEYxvHbrAsW22BWi9WyZLGJ9iURUZiYbKtGbSaDYLDIimVlYNFgs/gvWGS4YNu+j5z3cgS9oojp
+        PvDBc9/z4+o5xyDO3ZNFGe+oIIckbkode/ydoJdclTxs8hf6mHq1qxbNYAdN+lCBvKKANGbwFz7nDYc0
+        oYIt9g0btIBeaM+XNBCM3EMRJdf2PeNS9GVs/NGC2ifrMFpQE0wKitraGqUDGx/5k+cqkBWs9oOxa28w
+        cG1pIfJQntCD+rYYurYsvbbUEObUtZng19VEl11p4xMv0CGoLzxhP+cu9hpV+Em4TyXyfuqvp8naly5s
+        0+M8LEHwDyNvcNGwFZrXAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pasVisOffButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
