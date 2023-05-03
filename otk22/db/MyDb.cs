@@ -221,26 +221,17 @@ namespace otk22.db
             MySqlConnection con = getSqlConnection();
             MySqlCommand com = con.CreateCommand();
 
-            com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent,status) SELECT id,userLogin,serviceId,discountPercent, status FROM orders o WHERE o.id={orderId}";
-
             try
             {
+                com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent,status) SELECT id,userLogin,serviceId,discountPercent, status FROM orders o WHERE o.id={orderId}";
+                com.ExecuteNonQuery();
+
+                com.CommandText = $"delete from orders where id={orderId}";
                 com.ExecuteNonQuery();
             }
             catch (Exception error)
             {
-                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            com.CommandText = $"delete from orders where id={orderId}";
-
-            try
-            {
-                com.ExecuteNonQuery();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка архивирования заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             con.Close();

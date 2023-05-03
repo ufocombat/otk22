@@ -93,7 +93,7 @@ namespace otk22
                 order.discountPercent = 0;
                 order.userLogin = (String)userComboBox.SelectedValue;
                 order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
-                order.status = "Новый заказ";
+                order.status = "Новый";
             }
             else
             {
