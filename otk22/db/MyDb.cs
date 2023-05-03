@@ -57,7 +57,7 @@ namespace otk22.db
 
         public static DataTable getUsers()
         {
-            return getSelectTable($"SELECT * FROM users");
+            return getSelectTable($"SELECT * FROM users order by name");
         }
 
         public static DataTable getUsers(String login, String password)
@@ -69,7 +69,7 @@ namespace otk22.db
 
         public static DataTable getStatuses()
         {
-            return getSelectTable("SELECT * FROM statuses");
+            return getSelectTable("SELECT * FROM statuses order by level");
         }
 
 
@@ -77,7 +77,7 @@ namespace otk22.db
 
         public static DataTable getServices()
         {
-            return getSelectTable("SELECT * FROM services");
+            return getSelectTable("SELECT * FROM services order by name");
         }
 
         public static Service getServiceById(Int32 id)
