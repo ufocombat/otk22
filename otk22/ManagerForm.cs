@@ -89,5 +89,11 @@ namespace otk22
             MessageBox.Show($"Заказ {ordId} удален", "Выполнено", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+        private void ManagerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //loginForm.Show();
+            Application.Exit();
+        }
     }
 }

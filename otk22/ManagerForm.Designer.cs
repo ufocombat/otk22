@@ -252,6 +252,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "ManagerForm";
             this.Text = "ОТК - Список заказов - Менеджер";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManagerForm_FormClosed);
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
