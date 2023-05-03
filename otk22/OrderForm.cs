@@ -167,6 +167,17 @@ namespace otk22
                 MyDb.deleteOrderById(order.id);
             }
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Архтвировать заказ {order.id}?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                  == System.Windows.Forms.DialogResult.Yes)
+            {
+                MyDb.archOrderById(order.id);
+                this.DialogResult = DialogResult.OK;
+            }
+        
+        }
     }
 }
 

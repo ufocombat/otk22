@@ -91,20 +91,21 @@
             this.toolStripMenuItem1,
             this.удалитьToolStripMenuItem});
             this.funcContextMenuStrip.Name = "contextMenuStrip1";
-            this.funcContextMenuStrip.Size = new System.Drawing.Size(153, 48);
+            this.funcContextMenuStrip.Size = new System.Drawing.Size(181, 70);
             this.funcContextMenuStrip.Text = "Удалить";
             this.funcContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.funcContextMenuStrip_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Архивировать";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 

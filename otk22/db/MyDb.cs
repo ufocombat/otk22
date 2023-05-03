@@ -205,6 +205,34 @@ namespace otk22.db
             con.Close();
         }
 
-        //INSERT INTO otk.orders_arch(id,userLogin,serviceId,discountPercent) SELECT id,userLogin,serviceId,discountPercent FROM otk.orders o WHERE o.id=2;
+        public static void archOrderById(Int32 orderId)
+        {
+            MySqlConnection con = getSqlConnection();
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent) SELECT id,userLogin,serviceId,discountPercent FROM orders o WHERE o.id={orderId}";
+
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            com.CommandText = $"delete from orders where id={orderId}";
+
+            try
+            {
+                com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.Close();
+        }
     }
 }
