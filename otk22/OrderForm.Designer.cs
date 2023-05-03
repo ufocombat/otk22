@@ -37,6 +37,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.orderGroupBox = new System.Windows.Forms.GroupBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.serviceLabelError = new System.Windows.Forms.Label();
             this.userComboBox = new System.Windows.Forms.ComboBox();
             this.errorNameLabel = new System.Windows.Forms.Label();
@@ -69,7 +71,7 @@
             this.buttonPanel.Controls.Add(this.funcButton);
             this.buttonPanel.Controls.Add(this.cancelButton);
             this.buttonPanel.Controls.Add(this.saveButton);
-            this.buttonPanel.Location = new System.Drawing.Point(-1, 442);
+            this.buttonPanel.Location = new System.Drawing.Point(-1, 512);
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(424, 68);
             this.buttonPanel.TabIndex = 1;
@@ -91,21 +93,20 @@
             this.toolStripMenuItem1,
             this.удалитьToolStripMenuItem});
             this.funcContextMenuStrip.Name = "contextMenuStrip1";
-            this.funcContextMenuStrip.Size = new System.Drawing.Size(181, 70);
+            this.funcContextMenuStrip.Size = new System.Drawing.Size(153, 48);
             this.funcContextMenuStrip.Text = "Удалить";
-            this.funcContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.funcContextMenuStrip_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Архивировать";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -134,6 +135,8 @@
             // 
             // orderGroupBox
             // 
+            this.orderGroupBox.Controls.Add(this.statusLabel);
+            this.orderGroupBox.Controls.Add(this.statusComboBox);
             this.orderGroupBox.Controls.Add(this.serviceLabelError);
             this.orderGroupBox.Controls.Add(this.userComboBox);
             this.orderGroupBox.Controls.Add(this.errorNameLabel);
@@ -143,10 +146,32 @@
             this.orderGroupBox.Controls.Add(this.orderIdLabel);
             this.orderGroupBox.Location = new System.Drawing.Point(12, 12);
             this.orderGroupBox.Name = "orderGroupBox";
-            this.orderGroupBox.Size = new System.Drawing.Size(400, 210);
+            this.orderGroupBox.Size = new System.Drawing.Size(400, 285);
             this.orderGroupBox.TabIndex = 2;
             this.orderGroupBox.TabStop = false;
             this.orderGroupBox.Text = "Общее";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(26, 218);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(43, 15);
+            this.statusLabel.TabIndex = 28;
+            this.statusLabel.Text = "Статус";
+            // 
+            // statusComboBox
+            // 
+            this.statusComboBox.BackColor = System.Drawing.SystemColors.Window;
+            this.statusComboBox.DisplayMember = "description";
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Location = new System.Drawing.Point(26, 236);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(349, 23);
+            this.statusComboBox.TabIndex = 27;
+            this.statusComboBox.UseWaitCursor = true;
+            this.statusComboBox.ValueMember = "status";
             // 
             // serviceLabelError
             // 
@@ -252,7 +277,7 @@
             this.amountGroupBox.Controls.Add(this.amountTextBox);
             this.amountGroupBox.Controls.Add(this.priceLabel);
             this.amountGroupBox.Controls.Add(this.DiscountLabel);
-            this.amountGroupBox.Location = new System.Drawing.Point(12, 244);
+            this.amountGroupBox.Location = new System.Drawing.Point(12, 316);
             this.amountGroupBox.Name = "amountGroupBox";
             this.amountGroupBox.Size = new System.Drawing.Size(400, 173);
             this.amountGroupBox.TabIndex = 3;
@@ -324,14 +349,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(422, 511);
+            this.ClientSize = new System.Drawing.Size(422, 581);
             this.Controls.Add(this.amountGroupBox);
             this.Controls.Add(this.orderGroupBox);
             this.Controls.Add(this.buttonPanel);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(438, 550);
+            this.MaximumSize = new System.Drawing.Size(438, 620);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(438, 550);
+            this.MinimumSize = new System.Drawing.Size(438, 620);
             this.Name = "OrderForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -375,5 +400,7 @@
         private ContextMenuStrip funcContextMenuStrip;
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem удалитьToolStripMenuItem;
+        private Label statusLabel;
+        private ComboBox statusComboBox;
     }
 }

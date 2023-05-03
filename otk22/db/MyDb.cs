@@ -65,6 +65,14 @@ namespace otk22.db
             return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
         }
 
+        //Работа со статусами
+
+        public static DataTable getStatuses()
+        {
+            return getSelectTable("SELECT * FROM statuses");
+        }
+
+
         //Работа с услугами
 
         public static DataTable getServices()
@@ -105,12 +113,12 @@ namespace otk22.db
 
         public static DataTable getUsersOrders()
         {
-            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id order by o.id");
+            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent, o.status FROM orders o, services s where o.serviceId=s.id order by o.id");
         }
 
         public static DataTable getUserOrders(String login)
         {
-            return getSelectTable($"SELECT o.id, o.status, s.name, o.discountPercent FROM orders o, services s where o.serviceId=s.id and userLogin='{login}'");
+            return getSelectTable($"SELECT o.id, o.status, s.name, o.discountPercent, o.status FROM orders o, services s where o.serviceId=s.id and userLogin='{login}'");
         }
 
         public static Order getOrderById(Int32 id)
@@ -137,6 +145,7 @@ namespace otk22.db
                 discountPercent = Convert.ToDecimal(o.Rows[0]["discountPercent"]),
                 serviceId = Convert.ToInt32(o.Rows[0]["serviceId"]),
                 amount = Convert.ToDecimal(o.Rows[0]["price"]),
+                status = (String)o.Rows[0]["status"],
             };
         }
 
@@ -145,11 +154,12 @@ namespace otk22.db
             MySqlConnection con = getSqlConnection();
             MySqlCommand com = con.CreateCommand();
 
-            com.CommandText = "insert into orders(serviceId,userLogin,discountPercent) VALUES(@serviceId,@userLogin,@discountPercent)";
+            com.CommandText = "insert into orders(serviceId,userLogin,discountPercent,status) VALUES(@serviceId,@userLogin,@discountPercent,@status)";
 
             com.Parameters.AddWithValue("@serviceId", order.serviceId);
             com.Parameters.AddWithValue("@userLogin", order.userLogin);
             com.Parameters.AddWithValue("@discountPercent", order.discountPercent);
+            com.Parameters.AddWithValue("@status", order.status);
 
             try
             {
@@ -187,11 +197,12 @@ namespace otk22.db
             MySqlConnection con = getSqlConnection();
             MySqlCommand com = con.CreateCommand();
 
-            com.CommandText = $"update orders set serviceId=@serviceId, userLogin=@userLogin, discountPercent=@discountPercent where id={order.id}";
+            com.CommandText = $"update orders set serviceId=@serviceId, userLogin=@userLogin, discountPercent=@discountPercent, status=@status where id={order.id}";
 
             com.Parameters.AddWithValue("@serviceId", order.serviceId);
             com.Parameters.AddWithValue("@userLogin", order.userLogin);
             com.Parameters.AddWithValue("@discountPercent", order.discountPercent);
+            com.Parameters.AddWithValue("@status", order.status);
 
             try
             {
@@ -210,7 +221,7 @@ namespace otk22.db
             MySqlConnection con = getSqlConnection();
             MySqlCommand com = con.CreateCommand();
 
-            com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent) SELECT id,userLogin,serviceId,discountPercent FROM orders o WHERE o.id={orderId}";
+            com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent,status) SELECT id,userLogin,serviceId,discountPercent, status FROM orders o WHERE o.id={orderId}";
 
             try
             {

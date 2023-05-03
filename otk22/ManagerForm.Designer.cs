@@ -40,14 +40,15 @@
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -88,8 +89,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.изменитьToolStripMenuItem});
+            this.изменитьToolStripMenuItem,
+            this.файлToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -161,6 +162,7 @@
             this.ordersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.userLogin,
+            this.status,
             this.dataGridViewTextBoxColumn2,
             this.name});
             this.ordersGridView.Location = new System.Drawing.Point(3, 0);
@@ -175,35 +177,6 @@
             this.ordersGridView.TabIndex = 3;
             this.ordersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGridView_CellContentClick);
             this.ordersGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.изменитьToolStripMenuItem1_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Заказ Но";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // userLogin
-            // 
-            this.userLogin.DataPropertyName = "userLogin";
-            this.userLogin.HeaderText = "Логин";
-            this.userLogin.Name = "userLogin";
-            this.userLogin.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "discountPercent";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Скидка (%)";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Услуга";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // statusStrip
             // 
@@ -232,6 +205,42 @@
             this.discountPercent.DataPropertyName = "discountPercent";
             this.discountPercent.HeaderText = "Скидка (%)";
             this.discountPercent.Name = "discountPercent";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Заказ Но";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // userLogin
+            // 
+            this.userLogin.DataPropertyName = "userLogin";
+            this.userLogin.HeaderText = "Логин";
+            this.userLogin.Name = "userLogin";
+            this.userLogin.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Статус";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "discountPercent";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Скидка (%)";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Услуга";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // ManagerForm
             // 
@@ -268,14 +277,15 @@
         private DataGridViewTextBoxColumn discountPercent;
         private DataGridView ordersGridView;
         private ToolStripStatusLabel stripLogin;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn userLogin;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn name;
         private ToolStripMenuItem изменитьToolStripMenuItem;
         private ToolStripMenuItem новыйЗаказToolStripMenuItem1;
         private ToolStripMenuItem изменитьToolStripMenuItem1;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem удалитьToolStripMenuItem;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn userLogin;
+        private DataGridViewTextBoxColumn status;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn name;
     }
 }

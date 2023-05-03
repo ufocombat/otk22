@@ -28,6 +28,7 @@ namespace otk22
 
             userComboBox.DataSource = MyDb.getUsers();
             serviceComboBox.DataSource = MyDb.getServices();
+            statusComboBox.DataSource = MyDb.getStatuses();
         }
 
         private Boolean orderValidation()
@@ -68,6 +69,7 @@ namespace otk22
                  order.userLogin = (String)userComboBox.SelectedValue;
                  order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
                  order.discountPercent = discountUpDown.Value;
+                 order.status = (String)statusComboBox.SelectedValue;
 
                 if (order.id == 0)
                 {
@@ -89,8 +91,9 @@ namespace otk22
                 funcButton.Visible= false;
 
                 order.discountPercent = 0;
-                order.userLogin = (String)userComboBox.SelectedValue;//?
+                order.userLogin = (String)userComboBox.SelectedValue;
                 order.serviceId = Convert.ToInt32(serviceComboBox.SelectedValue);
+                order.status = "Новый заказ";
             }
             else
             {
@@ -101,6 +104,7 @@ namespace otk22
 
                 userComboBox.SelectedValue = order.userLogin;
                 serviceComboBox.SelectedValue = order.serviceId;
+                statusComboBox.SelectedValue = order.status;
             }
 
             Service s = MyDb.getServiceById(order.serviceId);
@@ -144,19 +148,9 @@ namespace otk22
             refreshForm();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void funcButton_Click(object sender, EventArgs e)
         {
             funcContextMenuStrip.Show(buttonPanel, new Point(funcButton.Location.X, funcButton.Location.Y-50));
-        }
-
-        private void funcContextMenuStrip_Opening(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)

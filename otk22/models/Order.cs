@@ -10,6 +10,7 @@ namespace otk22.models
     {
         public Int32 id;
         public String? userLogin;
+        public String? status;
         public Int32 serviceId;
         public Decimal discountPercent;
 
