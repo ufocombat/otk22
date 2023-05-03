@@ -88,7 +88,9 @@ namespace otk22
             {
                 orderIdLabel.Text = "Новый заказ";
                 saveButton.Text = "Создать";
+
                 funcButton.Visible= false;
+                saveButton.Location = new Point(255,22);
 
                 order.discountPercent = 0;
                 order.userLogin = (String)userComboBox.SelectedValue;
