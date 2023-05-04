@@ -92,7 +92,7 @@ namespace otk22
 
         private void ManagerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //loginForm.Show();
+            //loginForm.Show(); или
             Application.Exit();
         }
     }

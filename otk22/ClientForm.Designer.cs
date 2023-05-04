@@ -168,6 +168,7 @@
             this.MainMenuStrip = this.clientMenuStrip;
             this.Name = "ClientForm";
             this.Text = "ОТК - Список заказов клиента";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ClientForm_FormClosed);
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.clientMenuStrip.ResumeLayout(false);
             this.clientMenuStrip.PerformLayout();

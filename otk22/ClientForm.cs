@@ -44,5 +44,10 @@ namespace otk22
             loginForm!.Show(); 
 
         }
+
+        private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
