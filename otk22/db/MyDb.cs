@@ -11,6 +11,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Logging;
 using System.Xml.Linq;
 using System.Configuration;
+using System.Data.Common;
 
 namespace otk22.db
 {
@@ -113,7 +114,7 @@ namespace otk22.db
 
         public static DataTable getUsersOrders()
         {
-            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent, o.status FROM orders o, services s where o.serviceId=s.id order by o.id");
+            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent, o.status, s.price, (s.price*(1-o.discountPercent/100)) totalAmount FROM orders o, services s where o.serviceId=s.id order by o.id");
         }
 
         public static DataTable getUserOrders(String login)
@@ -221,6 +222,10 @@ namespace otk22.db
             MySqlConnection con = getSqlConnection();
             MySqlCommand com = con.CreateCommand();
 
+            MySqlTransaction myTrans = con.BeginTransaction();
+
+            com.Transaction = myTrans;
+
             try
             {
                 com.CommandText = $"INSERT INTO orders_arch(id,userLogin,serviceId,discountPercent,status) SELECT id,userLogin,serviceId,discountPercent, status FROM orders o WHERE o.id={orderId}";
@@ -228,9 +233,12 @@ namespace otk22.db
 
                 com.CommandText = $"delete from orders where id={orderId}";
                 com.ExecuteNonQuery();
+
+                myTrans.Commit();
             }
             catch (Exception error)
             {
+                myTrans.Rollback();
                 MessageBox.Show($"Ошибка архивирования заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

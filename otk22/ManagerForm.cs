@@ -49,6 +49,11 @@ namespace otk22
         private void ordersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             orderId = Convert.ToInt32(ordersGridView.Rows[e.RowIndex].Cells[0].Value);
+
+            orderToolStripStatusLabel.Text = $"Заказ Но: {orderId}";
+            //Или
+            изменитьToolStripMenuItem.Text = $"Заказ {orderId}";
+
         }
 
         private void refreOrdersList()
@@ -58,14 +63,7 @@ namespace otk22
 
         private void новыйЗаказToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            OrderForm orderForm = new OrderForm(user);
-
-            if (orderForm.ShowDialog(this) == DialogResult.OK)
-            {
-                refreOrdersList();
-            }
-
-            orderForm.Dispose();
+            
         }
 
         private void изменитьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -94,6 +92,18 @@ namespace otk22
         {
             //loginForm.Show(); или
             Application.Exit();
+        }
+
+        private void новыйЗаказToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OrderForm orderForm = new OrderForm(user);
+
+            if (orderForm.ShowDialog(this) == DialogResult.OK)
+            {
+                refreOrdersList();
+            }
+
+            orderForm.Dispose();
         }
     }
 }

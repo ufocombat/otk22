@@ -33,8 +33,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйЗаказToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +47,7 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.orderToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
+            this.новыйЗаказToolStripMenuItem,
             this.изменитьToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -97,24 +99,23 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "mainMenu";
             // 
+            // новыйЗаказToolStripMenuItem
+            // 
+            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
+            this.новыйЗаказToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.новыйЗаказToolStripMenuItem.Text = "&Новый Заказ";
+            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem_Click);
+            // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новыйЗаказToolStripMenuItem1,
             this.изменитьToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.удалитьToolStripMenuItem});
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
             this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.изменитьToolStripMenuItem.Text = "&Заказ";
-            // 
-            // новыйЗаказToolStripMenuItem1
-            // 
-            this.новыйЗаказToolStripMenuItem1.Name = "новыйЗаказToolStripMenuItem1";
-            this.новыйЗаказToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.новыйЗаказToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
-            this.новыйЗаказToolStripMenuItem1.Text = "Новый заказ";
-            this.новыйЗаказToolStripMenuItem1.Click += new System.EventHandler(this.новыйЗаказToolStripMenuItem1_Click);
             // 
             // изменитьToolStripMenuItem1
             // 
@@ -217,7 +218,8 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stripLogin});
+            this.stripLogin,
+            this.orderToolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 402);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(800, 22);
@@ -229,6 +231,12 @@
             this.stripLogin.Name = "stripLogin";
             this.stripLogin.Size = new System.Drawing.Size(34, 17);
             this.stripLogin.Text = "login";
+            // 
+            // orderToolStripStatusLabel
+            // 
+            this.orderToolStripStatusLabel.Name = "orderToolStripStatusLabel";
+            this.orderToolStripStatusLabel.Size = new System.Drawing.Size(59, 17);
+            this.orderToolStripStatusLabel.Text = "Заказ Но ";
             // 
             // id
             // 
@@ -279,7 +287,6 @@
         private DataGridView ordersGridView;
         private ToolStripStatusLabel stripLogin;
         private ToolStripMenuItem изменитьToolStripMenuItem;
-        private ToolStripMenuItem новыйЗаказToolStripMenuItem1;
         private ToolStripMenuItem изменитьToolStripMenuItem1;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem удалитьToolStripMenuItem;
@@ -288,5 +295,7 @@
         private DataGridViewTextBoxColumn status;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn name;
+        private ToolStripStatusLabel orderToolStripStatusLabel;
+        private ToolStripMenuItem новыйЗаказToolStripMenuItem;
     }
 }
