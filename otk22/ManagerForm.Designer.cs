@@ -40,16 +40,18 @@
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
             this.orderToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Услуга = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -161,11 +163,13 @@
             this.ordersGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.No,
+            this.State,
+            this.login,
+            this.Услуга,
             this.dataGridViewTextBoxColumn1,
-            this.userLogin,
-            this.status,
-            this.dataGridViewTextBoxColumn2,
-            this.name});
+            this.amount,
+            this.totalAmount});
             this.ordersGridView.Location = new System.Drawing.Point(3, 0);
             this.ordersGridView.Margin = new System.Windows.Forms.Padding(0);
             this.ordersGridView.MultiSelect = false;
@@ -178,42 +182,6 @@
             this.ordersGridView.TabIndex = 3;
             this.ordersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGridView_CellContentClick);
             this.ordersGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.изменитьToolStripMenuItem1_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Заказ Но";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // userLogin
-            // 
-            this.userLogin.DataPropertyName = "userLogin";
-            this.userLogin.HeaderText = "Логин";
-            this.userLogin.Name = "userLogin";
-            this.userLogin.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Статус";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "discountPercent";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Скидка (%)";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Услуга";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // statusStrip
             // 
@@ -249,6 +217,56 @@
             this.discountPercent.DataPropertyName = "discountPercent";
             this.discountPercent.HeaderText = "Скидка (%)";
             this.discountPercent.Name = "discountPercent";
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "Заказ Но";
+            this.No.HeaderText = "Заказ Но";
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "Статус";
+            this.State.HeaderText = "Статус";
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            // 
+            // login
+            // 
+            this.login.DataPropertyName = "Логин";
+            this.login.HeaderText = "Логин";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            // 
+            // Услуга
+            // 
+            this.Услуга.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Услуга.DataPropertyName = "Услуга";
+            this.Услуга.HeaderText = "Услуга";
+            this.Услуга.Name = "Услуга";
+            this.Услуга.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Скидка (%)";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Скидка (%)";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "Сумма Заказа";
+            this.amount.HeaderText = "Сумма Заказа";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // totalAmount
+            // 
+            this.totalAmount.DataPropertyName = "Итого";
+            this.totalAmount.HeaderText = "Итого";
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.ReadOnly = true;
             // 
             // ManagerForm
             // 
@@ -290,12 +308,14 @@
         private ToolStripMenuItem изменитьToolStripMenuItem1;
         private ToolStripSeparator toolStripMenuItem2;
         private ToolStripMenuItem удалитьToolStripMenuItem;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn userLogin;
-        private DataGridViewTextBoxColumn status;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn name;
         private ToolStripStatusLabel orderToolStripStatusLabel;
         private ToolStripMenuItem новыйЗаказToolStripMenuItem;
+        private DataGridViewTextBoxColumn No;
+        private DataGridViewTextBoxColumn State;
+        private DataGridViewTextBoxColumn login;
+        private DataGridViewTextBoxColumn Услуга;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn amount;
+        private DataGridViewTextBoxColumn totalAmount;
     }
 }

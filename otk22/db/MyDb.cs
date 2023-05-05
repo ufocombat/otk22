@@ -114,12 +114,12 @@ namespace otk22.db
 
         public static DataTable getUsersOrders()
         {
-            return getSelectTable("SELECT o.id, o.userLogin, s.name, o.discountPercent, o.status, s.price, (s.price*(1-o.discountPercent/100)) totalAmount FROM orders o, services s where o.serviceId=s.id order by o.id");
+            return getSelectTable("SELECT * FROM otk.userorders");
         }
 
         public static DataTable getUserOrders(String login)
         {
-            return getSelectTable($"SELECT o.id, s.name, o.discountPercent, o.status FROM orders o, services s where o.serviceId=s.id and userLogin='{login}'");
+            return getSelectTable($"SELECT `Заказ Но`, `Статус`,`Услуга`, `Скидка (%)`,`Сумма Заказа`, `Итого` from userOrders where `Логин`='{login}' order by `Заказ Но`");
         }
 
         public static Order getOrderById(Int32 id)
