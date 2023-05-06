@@ -35,18 +35,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.selectButton = new System.Windows.Forms.Button();
             this.serviceDataGridView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.selectButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceToNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceFromNumericUpDown)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serviceDataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,16 +60,15 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.nameTextBox);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 452);
+            this.panel1.Size = new System.Drawing.Size(593, 77);
             this.panel1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 91);
+            this.label2.Location = new System.Drawing.Point(310, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 15);
             this.label2.TabIndex = 9;
@@ -77,7 +76,7 @@
             // 
             // priceToNumericUpDown
             // 
-            this.priceToNumericUpDown.Location = new System.Drawing.Point(25, 175);
+            this.priceToNumericUpDown.Location = new System.Drawing.Point(450, 40);
             this.priceToNumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -95,7 +94,12 @@
             // 
             // priceFromNumericUpDown
             // 
-            this.priceFromNumericUpDown.Location = new System.Drawing.Point(25, 109);
+            this.priceFromNumericUpDown.Location = new System.Drawing.Point(310, 40);
+            this.priceFromNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.priceFromNumericUpDown.Name = "priceFromNumericUpDown";
             this.priceFromNumericUpDown.Size = new System.Drawing.Size(120, 23);
             this.priceFromNumericUpDown.TabIndex = 7;
@@ -104,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 157);
+            this.label3.Location = new System.Drawing.Point(450, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 15);
             this.label3.TabIndex = 6;
@@ -127,39 +131,6 @@
             this.nameTextBox.TabIndex = 1;
             this.nameTextBox.TextChanged += new System.EventHandler(this.serviceChanged);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.selectButton);
-            this.panel2.Location = new System.Drawing.Point(3, 378);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(298, 74);
-            this.panel2.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(174, 25);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 28);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // selectButton
-            // 
-            this.selectButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.selectButton.Enabled = false;
-            this.selectButton.Location = new System.Drawing.Point(45, 25);
-            this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(92, 28);
-            this.selectButton.TabIndex = 0;
-            this.selectButton.Text = "Выбрать";
-            this.selectButton.UseVisualStyleBackColor = true;
-            // 
             // serviceDataGridView
             // 
             this.serviceDataGridView.AllowUserToAddRows = false;
@@ -174,11 +145,11 @@
             this.id,
             this.name,
             this.Price});
-            this.serviceDataGridView.Location = new System.Drawing.Point(328, 38);
+            this.serviceDataGridView.Location = new System.Drawing.Point(23, 77);
             this.serviceDataGridView.Name = "serviceDataGridView";
             this.serviceDataGridView.ReadOnly = true;
             this.serviceDataGridView.RowTemplate.Height = 25;
-            this.serviceDataGridView.Size = new System.Drawing.Size(364, 391);
+            this.serviceDataGridView.Size = new System.Drawing.Size(545, 403);
             this.serviceDataGridView.TabIndex = 1;
             this.serviceDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDataGridView_CellEnter);
             this.serviceDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.serviceDataGridView_CellMouseDoubleClick);
@@ -206,12 +177,46 @@
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.selectButton);
+            this.panel2.Location = new System.Drawing.Point(1, 509);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(586, 74);
+            this.panel2.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(473, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(94, 28);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // selectButton
+            // 
+            this.selectButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.selectButton.Enabled = false;
+            this.selectButton.Location = new System.Drawing.Point(366, 23);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(92, 28);
+            this.selectButton.TabIndex = 0;
+            this.selectButton.Text = "Выбрать";
+            this.selectButton.UseVisualStyleBackColor = true;
+            // 
             // SearchServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(719, 450);
+            this.ClientSize = new System.Drawing.Size(588, 583);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.serviceDataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "SearchServiceForm";
@@ -220,8 +225,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.priceToNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceFromNumericUpDown)).EndInit();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serviceDataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -229,9 +234,6 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
-        private Button button2;
-        private Button selectButton;
         private Label label1;
         private TextBox nameTextBox;
         private DataGridView serviceDataGridView;
@@ -242,5 +244,8 @@
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn Price;
+        private Panel panel2;
+        private Button button2;
+        private Button selectButton;
     }
 }
