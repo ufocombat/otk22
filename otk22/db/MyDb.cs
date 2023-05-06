@@ -90,11 +90,11 @@ namespace otk22.db
         {
             if (String.IsNullOrEmpty(name))
             {
-                return getSelectTable($"SELECT name, price FROM services where price>={priceFrom} and price<={priceTo} order by name");
+                return getSelectTable($"SELECT id, name, price FROM services where price>={priceFrom} and price<={priceTo} order by price");
             }
             else
             {
-                return getSelectTable($"SELECT name, price FROM services where name like '%{name}%' and (price>={priceFrom} and price<={priceTo}) order by name");
+                return getSelectTable($"SELECT id, name, price FROM services where name like '%{name}%' and (price>={priceFrom} and price<={priceTo}) order by name");
             }
         }
 

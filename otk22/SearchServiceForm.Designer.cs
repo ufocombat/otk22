@@ -37,8 +37,9 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.selectButton = new System.Windows.Forms.Button();
             this.serviceDataGridView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
@@ -132,7 +133,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.selectButton);
             this.panel2.Location = new System.Drawing.Point(3, 378);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(298, 74);
@@ -148,15 +149,16 @@
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // selectButton
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(45, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Выбрать";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selectButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.selectButton.Enabled = false;
+            this.selectButton.Location = new System.Drawing.Point(45, 25);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(92, 28);
+            this.selectButton.TabIndex = 0;
+            this.selectButton.Text = "Выбрать";
+            this.selectButton.UseVisualStyleBackColor = true;
             // 
             // serviceDataGridView
             // 
@@ -169,6 +171,7 @@
             this.serviceDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.serviceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.serviceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.name,
             this.Price});
             this.serviceDataGridView.Location = new System.Drawing.Point(328, 38);
@@ -177,6 +180,14 @@
             this.serviceDataGridView.RowTemplate.Height = 25;
             this.serviceDataGridView.Size = new System.Drawing.Size(364, 391);
             this.serviceDataGridView.TabIndex = 1;
+            this.serviceDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDataGridView_CellEnter);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
             // name
             // 
@@ -218,15 +229,16 @@
         private Panel panel1;
         private Panel panel2;
         private Button button2;
-        private Button button1;
+        private Button selectButton;
         private Label label1;
         private TextBox nameTextBox;
         private DataGridView serviceDataGridView;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn Price;
         private Label label3;
         private Label label2;
         private NumericUpDown priceToNumericUpDown;
         private NumericUpDown priceFromNumericUpDown;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn Price;
     }
 }

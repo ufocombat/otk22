@@ -13,6 +13,8 @@ namespace otk22
 {
     public partial class SearchServiceForm : Form
     {
+        public Int32 serviceId = -1;
+
         public SearchServiceForm()
         {
             InitializeComponent();
@@ -24,5 +26,17 @@ namespace otk22
            serviceDataGridView.DataSource = MyDb.getServicesFilter(nameTextBox.Text, priceFromNumericUpDown.Value, priceToNumericUpDown.Value);
         }
 
+        private void serviceDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                serviceId = Convert.ToInt32(serviceDataGridView.Rows[e.RowIndex].Cells[0].Value);
+            }
+            catch
+            {
+
+            }
+            selectButton.Enabled= serviceId>0;
+        }
     }
 }
