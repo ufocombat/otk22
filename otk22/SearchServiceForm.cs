@@ -19,21 +19,10 @@ namespace otk22
             serviceDataGridView.DataSource = MyDb.getAllServices();
         }
 
-        private void SearchServiceForm_Load(object sender, EventArgs e)
+        private void serviceChanged(object sender, EventArgs e)
         {
-
+           serviceDataGridView.DataSource = MyDb.getServicesFilter(nameTextBox.Text, priceFromNumericUpDown.Value, priceToNumericUpDown.Value);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (nameTextBox.Text.Length > 3)
-            {
-                serviceDataGridView.DataSource = MyDb.getServicesFilter(nameTextBox.Text);
-            }
-            else
-            {
-                serviceDataGridView.DataSource = MyDb.getAllServices();
-            }
-        }
     }
 }

@@ -86,9 +86,16 @@ namespace otk22.db
             return getSelectTable("SELECT name, price FROM services order by name");
         }
 
-        public static DataTable getServicesFilter(String name)
+        public static DataTable getServicesFilter(String name, Decimal priceFrom, Decimal priceTo)
         {
-            return getSelectTable($"SELECT name, price FROM services where name like '%{name}%' order by name");
+            if (String.IsNullOrEmpty(name))
+            {
+                return getSelectTable($"SELECT name, price FROM services where price>={priceFrom} and price<={priceTo} order by name");
+            }
+            else
+            {
+                return getSelectTable($"SELECT name, price FROM services where name like '%{name}%' and (price>={priceFrom} and price<={priceTo}) order by name");
+            }
         }
 
         public static Service getServiceById(Int32 id)
