@@ -38,5 +38,10 @@ namespace otk22
             }
             selectButton.Enabled= serviceId>0;
         }
+
+        private void serviceDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

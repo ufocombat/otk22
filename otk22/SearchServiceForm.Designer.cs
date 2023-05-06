@@ -181,6 +181,7 @@
             this.serviceDataGridView.Size = new System.Drawing.Size(364, 391);
             this.serviceDataGridView.TabIndex = 1;
             this.serviceDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceDataGridView_CellEnter);
+            this.serviceDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.serviceDataGridView_CellMouseDoubleClick);
             // 
             // id
             // 

@@ -181,7 +181,7 @@ namespace otk22
 
             if (serviceForm.ShowDialog(this) == DialogResult.OK)
             {
-                MessageBox.Show($"Услуга {serviceForm.serviceId}");
+                serviceComboBox.SelectedValue = serviceForm.serviceId;
             }
 
             serviceForm.Dispose();

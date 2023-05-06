@@ -83,7 +83,7 @@ namespace otk22.db
 
         public static DataTable getAllServices()
         {
-            return getSelectTable("SELECT name, price FROM services order by name");
+            return getSelectTable("SELECT id, name, price FROM services order by name");
         }
 
         public static DataTable getServicesFilter(String name, Decimal priceFrom, Decimal priceTo)
