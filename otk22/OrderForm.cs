@@ -174,6 +174,17 @@ namespace otk22
             }
         
         }
+
+        private void linkLabel1_MouseClick(object sender, MouseEventArgs e)
+        {
+            SearchServiceForm serviceForm = new SearchServiceForm();
+
+            if (serviceForm.ShowDialog(this) == DialogResult.OK)
+            {
+            }
+
+            serviceForm.Dispose();
+        }
     }
 }
 

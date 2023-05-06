@@ -81,6 +81,16 @@ namespace otk22.db
             return getSelectTable("SELECT * FROM services order by name");
         }
 
+        public static DataTable getAllServices()
+        {
+            return getSelectTable("SELECT name, price FROM services order by name");
+        }
+
+        public static DataTable getServicesFilter(String name)
+        {
+            return getSelectTable($"SELECT name, price FROM services where name like '%{name}%' order by name");
+        }
+
         public static Service getServiceById(Int32 id)
         {
             var s = getSelectTable($"SELECT * FROM services where id={id}");

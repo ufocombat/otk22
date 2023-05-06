@@ -56,6 +56,7 @@
             this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonPanel.SuspendLayout();
             this.funcContextMenuStrip.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
@@ -135,6 +136,7 @@
             // 
             // orderGroupBox
             // 
+            this.orderGroupBox.Controls.Add(this.linkLabel1);
             this.orderGroupBox.Controls.Add(this.statusLabel);
             this.orderGroupBox.Controls.Add(this.statusComboBox);
             this.orderGroupBox.Controls.Add(this.serviceLabelError);
@@ -225,7 +227,7 @@
             this.serviceComboBox.FormattingEnabled = true;
             this.serviceComboBox.Location = new System.Drawing.Point(26, 154);
             this.serviceComboBox.Name = "serviceComboBox";
-            this.serviceComboBox.Size = new System.Drawing.Size(349, 23);
+            this.serviceComboBox.Size = new System.Drawing.Size(283, 23);
             this.serviceComboBox.TabIndex = 1;
             this.serviceComboBox.ValueMember = "id";
             this.serviceComboBox.SelectedIndexChanged += new System.EventHandler(this.serviceComboBox_SelectedIndexChanged);
@@ -344,6 +346,17 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(315, 157);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(51, 15);
+            this.linkLabel1.TabIndex = 29;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Поиск...";
+            this.linkLabel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.linkLabel1_MouseClick);
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -402,5 +415,6 @@
         private ToolStripMenuItem удалитьToolStripMenuItem;
         private Label statusLabel;
         private ComboBox statusComboBox;
+        private LinkLabel linkLabel1;
     }
 }

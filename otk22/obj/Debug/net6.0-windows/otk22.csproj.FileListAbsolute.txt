@@ -32,3 +32,4 @@ C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.Prope
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ClientForm.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ManagerForm.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.OrderForm.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.SearchServiceForm.resources
