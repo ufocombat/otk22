@@ -37,6 +37,8 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.orderGroupBox = new System.Windows.Forms.GroupBox();
+            this.labelAdress = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.statusLabel = new System.Windows.Forms.Label();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.serviceLabelError = new System.Windows.Forms.Label();
@@ -56,7 +58,6 @@
             this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonPanel.SuspendLayout();
             this.funcContextMenuStrip.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
@@ -136,6 +137,7 @@
             // 
             // orderGroupBox
             // 
+            this.orderGroupBox.Controls.Add(this.labelAdress);
             this.orderGroupBox.Controls.Add(this.linkLabel1);
             this.orderGroupBox.Controls.Add(this.statusLabel);
             this.orderGroupBox.Controls.Add(this.statusComboBox);
@@ -148,15 +150,35 @@
             this.orderGroupBox.Controls.Add(this.orderIdLabel);
             this.orderGroupBox.Location = new System.Drawing.Point(12, 12);
             this.orderGroupBox.Name = "orderGroupBox";
-            this.orderGroupBox.Size = new System.Drawing.Size(400, 285);
+            this.orderGroupBox.Size = new System.Drawing.Size(400, 298);
             this.orderGroupBox.TabIndex = 2;
             this.orderGroupBox.TabStop = false;
             this.orderGroupBox.Text = "Общее";
             // 
+            // labelAdress
+            // 
+            this.labelAdress.AutoSize = true;
+            this.labelAdress.Location = new System.Drawing.Point(27, 255);
+            this.labelAdress.Name = "labelAdress";
+            this.labelAdress.Size = new System.Drawing.Size(92, 15);
+            this.labelAdress.TabIndex = 30;
+            this.labelAdress.Text = "Адрес доставки";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(315, 157);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(51, 15);
+            this.linkLabel1.TabIndex = 29;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Поиск...";
+            this.linkLabel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.linkLabel1_MouseClick);
+            // 
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(26, 218);
+            this.statusLabel.Location = new System.Drawing.Point(27, 206);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(43, 15);
             this.statusLabel.TabIndex = 28;
@@ -168,7 +190,7 @@
             this.statusComboBox.DisplayMember = "description";
             this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new System.Drawing.Point(26, 236);
+            this.statusComboBox.Location = new System.Drawing.Point(26, 224);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(349, 23);
             this.statusComboBox.TabIndex = 27;
@@ -197,6 +219,7 @@
             this.userComboBox.Size = new System.Drawing.Size(349, 23);
             this.userComboBox.TabIndex = 0;
             this.userComboBox.ValueMember = "login";
+            this.userComboBox.SelectedIndexChanged += new System.EventHandler(this.userComboBox_SelectedIndexChanged);
             // 
             // errorNameLabel
             // 
@@ -346,17 +369,6 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(315, 157);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(51, 15);
-            this.linkLabel1.TabIndex = 29;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Поиск...";
-            this.linkLabel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.linkLabel1_MouseClick);
-            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -416,5 +428,6 @@
         private Label statusLabel;
         private ComboBox statusComboBox;
         private LinkLabel linkLabel1;
+        private Label labelAdress;
     }
 }

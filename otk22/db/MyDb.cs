@@ -66,6 +66,13 @@ namespace otk22.db
             return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
         }
 
+        public static String getUserAddress(String login)
+        {
+            DataTable tab = getSelectTable($"select c.address from users u join customers c on u.customerId=c.id where u.login='{login}'");
+            return (String)tab.Rows[0][0];
+        }
+
+
         //Работа со статусами
 
         public static DataTable getStatuses()

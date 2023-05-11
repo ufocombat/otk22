@@ -29,6 +29,8 @@ namespace otk22
             userComboBox.DataSource = MyDb.getUsers();
             serviceComboBox.DataSource = MyDb.getServices();
             statusComboBox.DataSource = MyDb.getStatuses();
+
+           
         }
 
         private Boolean orderValidation()
@@ -185,6 +187,11 @@ namespace otk22
             }
 
             serviceForm.Dispose();
+        }
+
+        private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelAdress.Text = $"Адрес доставки: {MyDb.getUserAddress((String)userComboBox.SelectedValue)}";
         }
     }
 }
