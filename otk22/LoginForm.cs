@@ -12,7 +12,7 @@ namespace otk22
             InitializeComponent();
         }
 
-        private void enterButton_Click(object sender, EventArgs e)
+        private Boolean IsLoginValid()
         {
             int errors = 0;
 
@@ -38,12 +38,20 @@ namespace otk22
                 passwordLabelError.Visible = false;
             }
 
-            if (errors > 0)
+            return errors == 0;
+        }
+
+        private void enterButton_Click(object sender, EventArgs e)
+        {
+            if (!IsLoginValid())
             {
                 return;
             }
 
             DataTable users = MyDb.getUsers(loginTextBox.Text, passwordTextBox.Text);
+            //DataTable users = MyDb.getUsers("admin", "1");
+
+           
 
             if (users.Rows.Count < 1)
             {
@@ -58,7 +66,7 @@ namespace otk22
                 login = (String)users.Rows[0]["login"],
                 name  = (String)users.Rows[0]["name"],
                 roleCode  = (String)users.Rows[0]["roleCode"],
-                customerId = (int)users.Rows[0]["customerId"]
+                customerId = Convert.ToInt32(users.Rows[0]["customerId"])
             };
 
             DataTable roles = MyDb.getRole(user.roleCode);
@@ -66,14 +74,17 @@ namespace otk22
 
             this.Hide();
 
+            passwordTextBox.Text = String.Empty;
+            
+
             if (employee)
             {
-                ListForm listForm = new ListForm(user);
+                ManagerForm listForm = new ManagerForm(this, user);
                 listForm.Show();
             }
             else
             {
-                ClientForm clientForm = new ClientForm(user);
+                ClientForm clientForm = new ClientForm(this, user);
                 clientForm.Show();
             }
         }
@@ -81,6 +92,23 @@ namespace otk22
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LoginForm_VisibleChanged(object sender, EventArgs e)
+        {
+           loginTextBox.Focus();
+        }
+
+        private void pasVisOnButton_Click(object sender, EventArgs e)
+        {
+            passCheckBox.Checked = passwordTextBox.UseSystemPasswordChar;
+        }
+
+        private void passCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordTextBox.UseSystemPasswordChar = !passwordTextBox.UseSystemPasswordChar;
+            pasVisOffButton.Visible = passwordTextBox.UseSystemPasswordChar;
+            pasVisOnButton.Visible = !passwordTextBox.UseSystemPasswordChar;
         }
     }
 }

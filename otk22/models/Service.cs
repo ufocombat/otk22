@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace otk22.models
 {
-    public class User
+    internal class Service
     {
-        public String? login;
+        public Int32 id;
         public String? name;
-        public Int32  customerId;
-        public String? roleCode;
-        public String? password;
+        public Decimal price;
     }
 }

@@ -15,18 +15,39 @@ namespace otk22
     public partial class ClientForm : Form
     {
         public readonly User user;
+        public readonly Form? loginForm;
 
-        public ClientForm(User user)
+        public ClientForm(Form loginForm, User user)
         {
             InitializeComponent();
+
+            this.loginForm = loginForm;
             this.user = user;
 
-            ordersGridView.DataSource = MyDb.getUserOrders(user.login);
+            ordersGridView.DataSource = MyDb.getUserOrders(user.login!);
         }
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-            Text = $"ОТК - Список заказов клиента - {user.name}";
+            Text = $"ОТК - Список заказов - Клиента - {user.name}";
+            statusStrip.Items["stripLogin"].Text = $"login: {user.login}";
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void разлогинитсяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginForm!.Show(); 
+
+        }
+
+        private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

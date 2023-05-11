@@ -28,25 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.passCheckBox = new System.Windows.Forms.CheckBox();
+            this.pasVisOffButton = new System.Windows.Forms.Button();
+            this.pasVisOnButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.enterButton = new System.Windows.Forms.Button();
             this.passwordLabelError = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelTop = new System.Windows.Forms.Panel();
             this.labelEnter = new System.Windows.Forms.Label();
             this.loginLabelError = new System.Windows.Forms.Label();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.loginLabel = new System.Windows.Forms.Label();
-            this.panel3.SuspendLayout();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.passPictureBox = new System.Windows.Forms.PictureBox();
+            this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // mySqlCommand1
@@ -56,47 +65,99 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // panel3
+            // panelLeft
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
-            this.panel3.Controls.Add(this.logo);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(212, 337);
-            this.panel3.TabIndex = 6;
+            this.panelLeft.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(131)))), ((int)(((byte)(204)))));
+            this.panelLeft.Controls.Add(this.logo);
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(212, 337);
+            this.panelLeft.TabIndex = 6;
             // 
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(24, 94);
+            this.logo.Location = new System.Drawing.Point(22, 88);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(161, 122);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
-            // panel1
+            // panelLogin
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
-            this.panel1.Controls.Add(this.exitButton);
-            this.panel1.Controls.Add(this.enterButton);
-            this.panel1.Controls.Add(this.passwordLabelError);
-            this.panel1.Controls.Add(this.passwordLabel);
-            this.panel1.Controls.Add(this.passwordTextBox);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.loginLabelError);
-            this.panel1.Controls.Add(this.loginTextBox);
-            this.panel1.Controls.Add(this.loginLabel);
-            this.panel1.Location = new System.Drawing.Point(210, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 337);
-            this.panel1.TabIndex = 7;
+            this.panelLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
+            this.panelLogin.Controls.Add(this.passPictureBox);
+            this.panelLogin.Controls.Add(this.logoPictureBox);
+            this.panelLogin.Controls.Add(this.passCheckBox);
+            this.panelLogin.Controls.Add(this.pasVisOffButton);
+            this.panelLogin.Controls.Add(this.pasVisOnButton);
+            this.panelLogin.Controls.Add(this.exitButton);
+            this.panelLogin.Controls.Add(this.enterButton);
+            this.panelLogin.Controls.Add(this.passwordLabelError);
+            this.panelLogin.Controls.Add(this.passwordLabel);
+            this.panelLogin.Controls.Add(this.passwordTextBox);
+            this.panelLogin.Controls.Add(this.panelTop);
+            this.panelLogin.Controls.Add(this.loginLabelError);
+            this.panelLogin.Controls.Add(this.loginTextBox);
+            this.panelLogin.Controls.Add(this.loginLabel);
+            this.panelLogin.Location = new System.Drawing.Point(210, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(376, 337);
+            this.panelLogin.TabIndex = 7;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.Image = global::otk22.Properties.Resources.login20;
+            this.logoPictureBox.Location = new System.Drawing.Point(26, 113);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.logoPictureBox.TabIndex = 20;
+            this.logoPictureBox.TabStop = false;
+            // 
+            // passCheckBox
+            // 
+            this.passCheckBox.AutoSize = true;
+            this.passCheckBox.Location = new System.Drawing.Point(52, 222);
+            this.passCheckBox.Name = "passCheckBox";
+            this.passCheckBox.Size = new System.Drawing.Size(117, 19);
+            this.passCheckBox.TabIndex = 18;
+            this.passCheckBox.Text = "показать пароль";
+            this.passCheckBox.UseVisualStyleBackColor = true;
+            this.passCheckBox.CheckedChanged += new System.EventHandler(this.passCheckBox_CheckedChanged);
+            // 
+            // pasVisOffButton
+            // 
+            this.pasVisOffButton.Image = ((System.Drawing.Image)(resources.GetObject("pasVisOffButton.Image")));
+            this.pasVisOffButton.Location = new System.Drawing.Point(238, 175);
+            this.pasVisOffButton.Name = "pasVisOffButton";
+            this.pasVisOffButton.Size = new System.Drawing.Size(27, 23);
+            this.pasVisOffButton.TabIndex = 17;
+            this.pasVisOffButton.UseVisualStyleBackColor = true;
+            this.pasVisOffButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
+            // 
+            // pasVisOnButton
+            // 
+            this.pasVisOnButton.Image = global::otk22.Properties.Resources.vis_on16;
+            this.pasVisOnButton.Location = new System.Drawing.Point(238, 175);
+            this.pasVisOnButton.Name = "pasVisOnButton";
+            this.pasVisOnButton.Size = new System.Drawing.Size(27, 23);
+            this.pasVisOnButton.TabIndex = 16;
+            this.pasVisOnButton.UseVisualStyleBackColor = true;
+            this.pasVisOnButton.Visible = false;
+            this.pasVisOnButton.Click += new System.EventHandler(this.pasVisOnButton_Click);
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(144, 275);
+            this.exitButton.Location = new System.Drawing.Point(152, 267);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 28);
+            this.exitButton.Size = new System.Drawing.Size(79, 28);
             this.exitButton.TabIndex = 15;
             this.exitButton.Text = "Выход";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -105,9 +166,9 @@
             // enterButton
             // 
             this.enterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.enterButton.Location = new System.Drawing.Point(39, 275);
+            this.enterButton.Location = new System.Drawing.Point(52, 267);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(99, 28);
+            this.enterButton.Size = new System.Drawing.Size(86, 28);
             this.enterButton.TabIndex = 14;
             this.enterButton.Text = "Вход";
             this.enterButton.UseVisualStyleBackColor = true;
@@ -117,8 +178,8 @@
             // 
             this.passwordLabelError.AutoSize = true;
             this.passwordLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordLabelError.ForeColor = System.Drawing.Color.Red;
-            this.passwordLabelError.Location = new System.Drawing.Point(39, 232);
+            this.passwordLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
+            this.passwordLabelError.Location = new System.Drawing.Point(52, 201);
             this.passwordLabelError.Name = "passwordLabelError";
             this.passwordLabelError.Size = new System.Drawing.Size(109, 13);
             this.passwordLabelError.TabIndex = 13;
@@ -128,7 +189,7 @@
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(39, 188);
+            this.passwordLabel.Location = new System.Drawing.Point(52, 157);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(49, 15);
             this.passwordLabel.TabIndex = 12;
@@ -136,27 +197,27 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(39, 206);
+            this.passwordTextBox.Location = new System.Drawing.Point(52, 175);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(180, 23);
             this.passwordTextBox.TabIndex = 11;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // panel2
+            // panelTop
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
-            this.panel2.Controls.Add(this.labelEnter);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(375, 87);
-            this.panel2.TabIndex = 6;
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(229)))), ((int)(((byte)(252)))));
+            this.panelTop.Controls.Add(this.labelEnter);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(376, 69);
+            this.panelTop.TabIndex = 6;
             // 
             // labelEnter
             // 
             this.labelEnter.AutoSize = true;
             this.labelEnter.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEnter.Location = new System.Drawing.Point(39, 23);
+            this.labelEnter.Location = new System.Drawing.Point(39, 19);
             this.labelEnter.Margin = new System.Windows.Forms.Padding(0);
             this.labelEnter.Name = "labelEnter";
             this.labelEnter.Size = new System.Drawing.Size(181, 32);
@@ -167,8 +228,8 @@
             // 
             this.loginLabelError.AutoSize = true;
             this.loginLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginLabelError.ForeColor = System.Drawing.Color.Red;
-            this.loginLabelError.Location = new System.Drawing.Point(39, 169);
+            this.loginLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
+            this.loginLabelError.Location = new System.Drawing.Point(52, 138);
             this.loginLabelError.Name = "loginLabelError";
             this.loginLabelError.Size = new System.Drawing.Size(86, 13);
             this.loginLabelError.TabIndex = 10;
@@ -177,7 +238,7 @@
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(39, 143);
+            this.loginTextBox.Location = new System.Drawing.Point(52, 112);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(180, 23);
             this.loginTextBox.TabIndex = 8;
@@ -185,11 +246,21 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(39, 125);
+            this.loginLabel.Location = new System.Drawing.Point(52, 94);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(41, 15);
             this.loginLabel.TabIndex = 7;
             this.loginLabel.Text = "Логин";
+            // 
+            // passPictureBox
+            // 
+            this.passPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("passPictureBox.Image")));
+            this.passPictureBox.Location = new System.Drawing.Point(26, 176);
+            this.passPictureBox.Name = "passPictureBox";
+            this.passPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.passPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.passPictureBox.TabIndex = 21;
+            this.passPictureBox.TabStop = false;
             // 
             // LoginForm
             // 
@@ -198,30 +269,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(200)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(584, 336);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
-            this.MaximizeBox = false;
+            this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelLeft);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximumSize = new System.Drawing.Size(600, 375);
             this.MinimumSize = new System.Drawing.Size(500, 375);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ОТК - Вход";
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.VisibleChanged += new System.EventHandler(this.LoginForm_VisibleChanged);
+            this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
-        private Panel panel3;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel panelLeft;
+        private Panel panelLogin;
+        private Panel panelTop;
         private Label labelEnter;
         private Label loginLabelError;
         private TextBox loginTextBox;
@@ -232,5 +306,11 @@
         private Button enterButton;
         private Label passwordLabelError;
         private Button exitButton;
+        private System.Windows.Forms.Timer timer1;
+        private Button pasVisOffButton;
+        private Button pasVisOnButton;
+        private CheckBox passCheckBox;
+        private PictureBox logoPictureBox;
+        private PictureBox passPictureBox;
     }
 }

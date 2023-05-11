@@ -125,4 +125,27 @@
         RK5CYII=
 </value>
   </data>
+  <data name="passPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAP5JREFUOE/t
+        069rQlEYxvHbrAsW22BWi9WyZLGJ9iURUZiYbKtGbSaDYLDIimVlYNFgs/gvWGS4YNu+j5z3cgS9oojp
+        PvDBc9/z4+o5xyDO3ZNFGe+oIIckbkode/ydoJdclTxs8hf6mHq1qxbNYAdN+lCBvKKANGbwFz7nDYc0
+        oYIt9g0btIBeaM+XNBCM3EMRJdf2PeNS9GVs/NGC2ifrMFpQE0wKitraGqUDGx/5k+cqkBWs9oOxa28w
+        cG1pIfJQntCD+rYYurYsvbbUEObUtZng19VEl11p4xMv0CGoLzxhP+cu9hpV+Em4TyXyfuqvp8naly5s
+        0+M8LEHwDyNvcNGwFZrXAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pasVisOffButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAN1JREFUOE/N0mFtAkEQxfGTUAmVgAQk1AE4AAfUQSVQB+AACUhAAhLg/e4YsuRC
+        IJQPfck/N3s782Z277p/o2VYDeFr+gyHUCaLsAveHcM+/AR5d2VT8ixML3wEmoTv0DYZyYZOkpgoNgXm
+        gTSRMzLRTaGiOg4Tse7WckgOk1r3ktCebxNOgQl9hfUQ9lJssqssWsffwKBMTLENJYY3BjVmTcGsDNpJ
+        qI7YTtzLRbUbnsaG97o6v7gudSSdJSiSZG06t+4Ti/FQil1kfUaG9R88ZXBPdVd/NjHdO9R1Zz5KNzZJ
+        1jpcAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>165, 17</value>
+  </metadata>
 </root>

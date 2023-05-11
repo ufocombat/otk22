@@ -15,7 +15,6 @@ C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\refint\otk2
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.pdb
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.genruntimeconfig.cache
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\ref\otk22.dll
-C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ListForm.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\Google.Protobuf.dll
 C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
@@ -31,3 +30,6 @@ C:\Users\ufocombat\source\repos\otk22\otk22\bin\Debug\net6.0-windows\BouncyCastl
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.csproj.CopyComplete
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.Properties.Resources.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ClientForm.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ManagerForm.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.OrderForm.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.SearchServiceForm.resources
