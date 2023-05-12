@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -20,54 +21,57 @@ namespace otk22
             InitializeComponent();
         }
 
+        private String optionsFileName()
+        {
+            return System.AppDomain.CurrentDomain.BaseDirectory + "setup.json";
+        }
+
         private void SetupForm_Load(object sender, EventArgs e)
         {
-            List<string> dinosaurs = new List<string>();
+            Setup setup = new Setup();
 
-            dinosaurs.Add("Tyrannosaurus");
-            dinosaurs.Add("Amargasaurus");
-            dinosaurs.Add("Mamenchisaurus");
-            dinosaurs.Add("Deinonychus");
-            dinosaurs.Add("Compsognathus");
+            setup.options.Add(new CheckOption() { name = "Tyrannosaurus" });
+            setup.options.Add(new CheckOption() { name = "Amargasaurus" });
+            setup.options.Add(new CheckOption() { name = "Mamenchisaurus" });
+            setup.options.Add(new CheckOption() { name = "Deinonychus" });
+            setup.options.Add(new CheckOption() { name = "Compsognathus" });
+            
+            if (File.Exists(optionsFileName()))
+            { 
+                String options = File.ReadAllText(optionsFileName());
 
-            foreach(var d in dinosaurs)
-            {
-                checkedListBox1.Items.Add(d);
+                Setup stp =  JsonSerializer.Deserialize<Setup>(options);
+
+                foreach (CheckOption o in stp.options)
+                {
+                    CheckOption c = setup.options.Find(x => x.name == o.name);
+                    c.selected = o.selected;
+                }
+
             }
 
-
+            foreach (var d in setup.options)
+            {
+                checkedListBox1.Items.Add(d.name,d.selected);
+            }
         }
 
-        private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-
-            foreach (var i in checkedListBox1.CheckedItems)
-            {
-                listBox1.Items.Add(i.ToString());
-            }
-        }
-
-        private void SaveOptions() {
-            var path = System.AppDomain.CurrentDomain.BaseDirectory+"/setup.json";
 
             Setup setup = new Setup();
 
             foreach (var i in checkedListBox1.CheckedItems)
             {
-                setup.options.Add(new CheckOption() { selected = true, name = i.ToString()});
+                setup.options.Add(
+                    new CheckOption()
+                    {
+                        selected = true,
+                        name = i.ToString()
+                    });
             }
 
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                writer.WriteLine(JsonSerializer.Serialize(setup));
-            }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SaveOptions();
+            File.WriteAllText(optionsFileName(), JsonSerializer.Serialize(setup));
         }
     }
 }
