@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using otk22.db;
@@ -192,6 +193,18 @@ namespace otk22
         private void userComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             labelAdress.Text = $"Адрес доставки: {MyDb.getUserAddress((String)userComboBox.SelectedValue)}";
+        }
+
+        private void funcContextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void экспортToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string jsonString = JsonSerializer.Serialize(order);
+
+            MessageBox.Show(jsonString);
         }
     }
 }

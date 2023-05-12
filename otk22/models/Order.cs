@@ -8,16 +8,16 @@ namespace otk22.models
 {
     internal class Order
     {
-        public Int32 id;
-        public String? userLogin;
-        public String? status;
-        public Int32 serviceId;
-        public Decimal discountPercent;
+        public Int32 id { get; set; }
+        public String? userLogin { get; set; }
+        public String? status { get; set; }
+        public Int32 serviceId { get; set; }
+        public Decimal discountPercent { get; set; }
 
-        public Decimal price = 0; // Цена услуги
-        public Decimal amount = 0; // Сумма заказа
-        public Decimal discountAmount = 0; // Сумма скидки
-        public Decimal totalAmount = 0; // Итоговая сумма заказа
+        public Decimal price { get; set; } = 0;  // Цена услуги
+        public Decimal amount { get; set; } = 0;  // Сумма заказа
+        public Decimal discountAmount { get; set; } = 0; // Сумма скидки
+        public Decimal totalAmount { get; set; } = 0; // Итоговая сумма заказа
 
         public void calcTotalAmount()
         {
