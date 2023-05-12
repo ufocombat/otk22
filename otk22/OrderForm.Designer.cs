@@ -32,6 +32,7 @@
             this.buttonPanel = new System.Windows.Forms.Panel();
             this.funcButton = new System.Windows.Forms.Button();
             this.funcContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.DiscountLabel = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonPanel.SuspendLayout();
             this.funcContextMenuStrip.SuspendLayout();
             this.orderGroupBox.SuspendLayout();
@@ -97,21 +98,28 @@
             this.toolStripMenuItem1,
             this.удалитьToolStripMenuItem});
             this.funcContextMenuStrip.Name = "contextMenuStrip1";
-            this.funcContextMenuStrip.Size = new System.Drawing.Size(181, 92);
+            this.funcContextMenuStrip.Size = new System.Drawing.Size(153, 70);
             this.funcContextMenuStrip.Text = "Удалить";
             this.funcContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.funcContextMenuStrip_Opening);
+            // 
+            // экспортToolStripMenuItem
+            // 
+            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.экспортToolStripMenuItem.Text = "Экспорт";
+            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.экспортToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Архивировать";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -372,12 +380,11 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // экспортToolStripMenuItem
+            // openFileDialog
             // 
-            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.экспортToolStripMenuItem.Text = "Экспорт";
-            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.экспортToolStripMenuItem_Click);
+            this.openFileDialog.CheckFileExists = false;
+            this.openFileDialog.FileName = "order.json";
+            this.openFileDialog.Filter = "txt files (*.json)|*.json";
             // 
             // OrderForm
             // 
@@ -440,5 +447,6 @@
         private LinkLabel linkLabel1;
         private Label labelAdress;
         private ToolStripMenuItem экспортToolStripMenuItem;
+        private OpenFileDialog openFileDialog;
     }
 }

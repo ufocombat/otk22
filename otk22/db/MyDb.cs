@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using otk22.models;
-using Microsoft.VisualBasic.ApplicationServices;
 using Microsoft.VisualBasic.Logging;
 using System.Xml.Linq;
 using System.Configuration;
@@ -64,6 +63,21 @@ namespace otk22.db
         public static DataTable getUsers(String login, String password)
         {
             return getSelectTable($"SELECT * FROM users where login='{login}' and password='{password}'");
+        }
+
+        public static User getUser(String login)
+        {
+            var users = getSelectTable($"SELECT * FROM users where login='{login}'");
+
+            User user = new User()
+            {
+                login = (String)users.Rows[0]["login"],
+                name = (String)users.Rows[0]["name"],
+                roleCode = (String)users.Rows[0]["roleCode"],
+                customerId = Convert.ToInt32(users.Rows[0]["customerId"])
+            };
+
+            return user;
         }
 
         public static String getUserAddress(String login)

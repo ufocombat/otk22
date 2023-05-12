@@ -202,9 +202,36 @@ namespace otk22
 
         private void экспортToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string jsonString = JsonSerializer.Serialize(order);
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var filePath = openFileDialog.FileName;
 
-            MessageBox.Show(jsonString);
+                if (File.Exists(filePath))
+                {
+                    MessageBox.Show($"Файл существует", "Внимание");
+                }
+                else
+                {
+
+                    OrderExport orderExort = new OrderExport()
+                    {
+                        order = order,
+                        user = MyDb.getUser(order.userLogin),
+                        service = MyDb.getServiceById(order.serviceId),
+                        admin = user
+                    };
+
+                    using (StreamWriter writer = new StreamWriter(filePath))
+                    {
+                        writer.WriteLine(JsonSerializer.Serialize(orderExort));
+                    }
+
+                    MessageBox.Show($"Заказ экспортирован в {filePath}");
+                }
+            }
+
+            // Read a file
+            //string readText = File.ReadAllText(fullPath);
         }
     }
 }

@@ -8,8 +8,9 @@ namespace otk22.models
 {
     internal class Service
     {
-        public Int32 id;
-        public String? name;
-        public Decimal price;
-    }
+        public Int32 id { get; set; }
+        public String? name { get; set; }
+        public Decimal price { get; set; }
+
+}
 }
