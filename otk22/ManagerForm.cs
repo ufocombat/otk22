@@ -11,6 +11,8 @@ using MySql.Data.MySqlClient;
 using Mysqlx;
 using otk22.db;
 using otk22.models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace otk22
 {
@@ -104,6 +106,13 @@ namespace otk22
             }
 
             orderForm.Dispose();
+        }
+
+        private void экспортToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string jsonString = JsonSerializer.Serialize(user);
+
+            MessageBox.Show(jsonString);
         }
     }
 }

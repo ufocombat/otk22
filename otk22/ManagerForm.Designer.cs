@@ -40,11 +40,6 @@
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientPanelOrders = new System.Windows.Forms.Panel();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
-            this.orderToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +47,12 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.stripLogin = new System.Windows.Forms.ToolStripStatusLabel();
+            this.orderToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.clientPanelOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
@@ -63,7 +64,8 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.разлогинитьсяToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.выходToolStripMenuItem});
+            this.выходToolStripMenuItem,
+            this.экспортToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "&Файл";
@@ -183,41 +185,6 @@
             this.ordersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordersGridView_CellContentClick);
             this.ordersGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.изменитьToolStripMenuItem1_Click);
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stripLogin,
-            this.orderToolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 402);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip.TabIndex = 0;
-            this.statusStrip.Text = "statusStrip1";
-            // 
-            // stripLogin
-            // 
-            this.stripLogin.Name = "stripLogin";
-            this.stripLogin.Size = new System.Drawing.Size(34, 17);
-            this.stripLogin.Text = "login";
-            // 
-            // orderToolStripStatusLabel
-            // 
-            this.orderToolStripStatusLabel.Name = "orderToolStripStatusLabel";
-            this.orderToolStripStatusLabel.Size = new System.Drawing.Size(59, 17);
-            this.orderToolStripStatusLabel.Text = "Заказ Но ";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Заказ Но";
-            this.id.Name = "id";
-            // 
-            // discountPercent
-            // 
-            this.discountPercent.DataPropertyName = "discountPercent";
-            this.discountPercent.HeaderText = "Скидка (%)";
-            this.discountPercent.Name = "discountPercent";
-            // 
             // No
             // 
             this.No.DataPropertyName = "Заказ Но";
@@ -268,6 +235,48 @@
             this.totalAmount.Name = "totalAmount";
             this.totalAmount.ReadOnly = true;
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stripLogin,
+            this.orderToolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 402);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // stripLogin
+            // 
+            this.stripLogin.Name = "stripLogin";
+            this.stripLogin.Size = new System.Drawing.Size(34, 17);
+            this.stripLogin.Text = "login";
+            // 
+            // orderToolStripStatusLabel
+            // 
+            this.orderToolStripStatusLabel.Name = "orderToolStripStatusLabel";
+            this.orderToolStripStatusLabel.Size = new System.Drawing.Size(59, 17);
+            this.orderToolStripStatusLabel.Text = "Заказ Но ";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Заказ Но";
+            this.id.Name = "id";
+            // 
+            // discountPercent
+            // 
+            this.discountPercent.DataPropertyName = "discountPercent";
+            this.discountPercent.HeaderText = "Скидка (%)";
+            this.discountPercent.Name = "discountPercent";
+            // 
+            // экспортToolStripMenuItem
+            // 
+            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.экспортToolStripMenuItem.Text = "Экспорт";
+            this.экспортToolStripMenuItem.Click += new System.EventHandler(this.экспортToolStripMenuItem_Click);
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -317,5 +326,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn amount;
         private DataGridViewTextBoxColumn totalAmount;
+        private ToolStripMenuItem экспортToolStripMenuItem;
     }
 }

@@ -158,7 +158,7 @@
             // labelAdress
             // 
             this.labelAdress.AutoSize = true;
-            this.labelAdress.Location = new System.Drawing.Point(27, 255);
+            this.labelAdress.Location = new System.Drawing.Point(27, 263);
             this.labelAdress.Name = "labelAdress";
             this.labelAdress.Size = new System.Drawing.Size(92, 15);
             this.labelAdress.TabIndex = 30;
@@ -167,7 +167,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(315, 157);
+            this.linkLabel1.Location = new System.Drawing.Point(315, 158);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(51, 15);
             this.linkLabel1.TabIndex = 29;
@@ -178,7 +178,7 @@
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(27, 206);
+            this.statusLabel.Location = new System.Drawing.Point(27, 207);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(43, 15);
             this.statusLabel.TabIndex = 28;
@@ -190,7 +190,7 @@
             this.statusComboBox.DisplayMember = "description";
             this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Location = new System.Drawing.Point(26, 224);
+            this.statusComboBox.Location = new System.Drawing.Point(26, 225);
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(349, 23);
             this.statusComboBox.TabIndex = 27;
@@ -202,7 +202,7 @@
             this.serviceLabelError.AutoSize = true;
             this.serviceLabelError.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.serviceLabelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(44)))), ((int)(((byte)(31)))));
-            this.serviceLabelError.Location = new System.Drawing.Point(26, 180);
+            this.serviceLabelError.Location = new System.Drawing.Point(26, 181);
             this.serviceLabelError.Name = "serviceLabelError";
             this.serviceLabelError.Size = new System.Drawing.Size(85, 13);
             this.serviceLabelError.TabIndex = 26;
@@ -236,7 +236,7 @@
             // serviceLabel
             // 
             this.serviceLabel.AutoSize = true;
-            this.serviceLabel.Location = new System.Drawing.Point(26, 136);
+            this.serviceLabel.Location = new System.Drawing.Point(26, 137);
             this.serviceLabel.Name = "serviceLabel";
             this.serviceLabel.Size = new System.Drawing.Size(44, 15);
             this.serviceLabel.TabIndex = 17;
@@ -248,7 +248,7 @@
             this.serviceComboBox.DisplayMember = "name";
             this.serviceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.serviceComboBox.FormattingEnabled = true;
-            this.serviceComboBox.Location = new System.Drawing.Point(26, 154);
+            this.serviceComboBox.Location = new System.Drawing.Point(26, 155);
             this.serviceComboBox.Name = "serviceComboBox";
             this.serviceComboBox.Size = new System.Drawing.Size(283, 23);
             this.serviceComboBox.TabIndex = 1;
