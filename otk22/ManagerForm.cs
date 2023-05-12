@@ -114,5 +114,17 @@ namespace otk22
 
             MessageBox.Show(jsonString);
         }
+
+        private void настройкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetupForm setupForm = new SetupForm();
+
+            if (setupForm.ShowDialog(this) == DialogResult.OK)
+            {
+                refreOrdersList();
+            }
+
+            setupForm.Dispose();
+        }
     }
 }

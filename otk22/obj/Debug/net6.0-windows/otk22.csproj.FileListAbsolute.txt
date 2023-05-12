@@ -33,3 +33,4 @@ C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.Clien
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.ManagerForm.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.OrderForm.resources
 C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.SearchServiceForm.resources
+C:\Users\ufocombat\source\repos\otk22\otk22\obj\Debug\net6.0-windows\otk22.SetupForm.resources

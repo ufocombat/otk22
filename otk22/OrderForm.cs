@@ -216,7 +216,7 @@ namespace otk22
                     OrderExport orderExort = new OrderExport()
                     {
                         order = order,
-                        user = MyDb.getUser(order.userLogin),
+                        user = MyDb.getUser(order.userLogin!),
                         service = MyDb.getServiceById(order.serviceId),
                         admin = user
                     };
