@@ -10,8 +10,8 @@ namespace otk22.models
     {
         public String? login { get; set; }
         public String? name { get; set; }
-        public Int32  customerId { get; set; }
+        public Int32 customerId { get; set; }
         public String? roleCode { get; set; }
-        public String? password { get; set; }
+        public String? password;
     }
 }
