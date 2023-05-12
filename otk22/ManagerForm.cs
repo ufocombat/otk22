@@ -108,13 +108,6 @@ namespace otk22
             orderForm.Dispose();
         }
 
-        private void экспортToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string jsonString = JsonSerializer.Serialize(user);
-
-            MessageBox.Show(jsonString);
-        }
-
         private void настройкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetupForm setupForm = new SetupForm();
