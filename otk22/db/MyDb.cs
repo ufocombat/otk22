@@ -53,6 +53,13 @@ namespace otk22.db
             return dataTable;
         }
 
+        //Работа с валютами
+
+        public static DataTable getCurrencies()
+        {
+            return getSelectTable($"SELECT * FROM currencies order by code");
+        }
+
         //Работа с пользователями
 
         public static DataTable getUsers()

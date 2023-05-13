@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using otk22.db;
 
 namespace otk22
 {
@@ -54,6 +55,8 @@ namespace otk22
             {
                 checkedListBox1.Items.Add(d.name,d.selected);
             }
+
+            curDataGridView.DataSource = MyDb.getCurrencies();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,6 +75,11 @@ namespace otk22
             }
 
             File.WriteAllText(optionsFileName(), JsonSerializer.Serialize(setup));
+        }
+
+        private void curTimer_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Таймер");
         }
     }
 }
