@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.curDataGridView = new System.Windows.Forms.DataGridView();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.curTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.curDataGridView)).BeginInit();
@@ -49,40 +49,18 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 12);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(296, 130);
+            this.checkedListBox1.Size = new System.Drawing.Size(465, 166);
             this.checkedListBox1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.curDataGridView);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(1, 315);
+            this.panel1.Location = new System.Drawing.Point(0, 364);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 51);
+            this.panel1.Size = new System.Drawing.Size(489, 51);
             this.panel1.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(232, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(151, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // curDataGridView
             // 
@@ -95,11 +73,11 @@
             this.curDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.code,
             this.rate});
-            this.curDataGridView.Location = new System.Drawing.Point(12, 166);
+            this.curDataGridView.Location = new System.Drawing.Point(12, -171);
             this.curDataGridView.Name = "curDataGridView";
             this.curDataGridView.ReadOnly = true;
             this.curDataGridView.RowTemplate.Height = 25;
-            this.curDataGridView.Size = new System.Drawing.Size(296, 132);
+            this.curDataGridView.Size = new System.Drawing.Size(465, 152);
             this.curDataGridView.TabIndex = 4;
             // 
             // code
@@ -117,9 +95,32 @@
             this.rate.Name = "rate";
             this.rate.ReadOnly = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Location = new System.Drawing.Point(401, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(320, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // curTimer
             // 
-            this.curTimer.Interval = 10000;
+            this.curTimer.Interval = 5000;
             this.curTimer.Tick += new System.EventHandler(this.curTimer_Tick);
             // 
             // SetupForm
@@ -127,8 +128,7 @@
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 364);
-            this.Controls.Add(this.curDataGridView);
+            this.ClientSize = new System.Drawing.Size(489, 411);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkedListBox1);
             this.Name = "SetupForm";

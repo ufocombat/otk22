@@ -57,6 +57,8 @@ namespace otk22
             }
 
             curDataGridView.DataSource = MyDb.getCurrencies();
+
+            curTimer.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,7 +81,8 @@ namespace otk22
 
         private void curTimer_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Таймер");
+            MyDb.callStoreProc();
+           // MessageBox.Show("Таймер");
         }
     }
 }

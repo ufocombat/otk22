@@ -11,6 +11,7 @@ using Microsoft.VisualBasic.Logging;
 using System.Xml.Linq;
 using System.Configuration;
 using System.Data.Common;
+using System.Drawing;
 
 namespace otk22.db
 {
@@ -58,6 +59,26 @@ namespace otk22.db
         public static DataTable getCurrencies()
         {
             return getSelectTable($"SELECT * FROM currencies order by code");
+        }
+
+        public static void callStoreProc()
+        {
+            MySqlConnection con = getSqlConnection();
+            MySqlCommand com = con.CreateCommand();
+
+            com.CommandText = "currencies_cur_upd";
+            com.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+               com.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+               MessageBox.Show($"Ошибка сохранения заказа: {error.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            con.Close();
         }
 
         //Работа с пользователями
