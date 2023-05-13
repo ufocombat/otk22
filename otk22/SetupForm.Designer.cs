@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.curDataGridView = new System.Windows.Forms.DataGridView();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.curTimer = new System.Windows.Forms.Timer(this.components);
+            this.curDataGridView = new System.Windows.Forms.DataGridView();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.curDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,46 +55,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.curDataGridView);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 364);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(489, 51);
             this.panel1.TabIndex = 3;
-            // 
-            // curDataGridView
-            // 
-            this.curDataGridView.AllowUserToAddRows = false;
-            this.curDataGridView.AllowUserToDeleteRows = false;
-            this.curDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.curDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.curDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.code,
-            this.rate});
-            this.curDataGridView.Location = new System.Drawing.Point(12, -171);
-            this.curDataGridView.Name = "curDataGridView";
-            this.curDataGridView.ReadOnly = true;
-            this.curDataGridView.RowTemplate.Height = 25;
-            this.curDataGridView.Size = new System.Drawing.Size(465, 152);
-            this.curDataGridView.TabIndex = 4;
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Код Валюты";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // rate
-            // 
-            this.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.rate.DataPropertyName = "rate";
-            this.rate.HeaderText = "Курс к Рублю";
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
             // 
             // button2
             // 
@@ -123,12 +90,54 @@
             this.curTimer.Interval = 5000;
             this.curTimer.Tick += new System.EventHandler(this.curTimer_Tick);
             // 
+            // curDataGridView
+            // 
+            this.curDataGridView.AllowUserToAddRows = false;
+            this.curDataGridView.AllowUserToDeleteRows = false;
+            this.curDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.curDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.curDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.code,
+            this.rate2,
+            this.rate});
+            this.curDataGridView.Location = new System.Drawing.Point(12, 193);
+            this.curDataGridView.Name = "curDataGridView";
+            this.curDataGridView.ReadOnly = true;
+            this.curDataGridView.RowTemplate.Height = 25;
+            this.curDataGridView.Size = new System.Drawing.Size(465, 152);
+            this.curDataGridView.TabIndex = 5;
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Код Валюты";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // rate2
+            // 
+            this.rate2.DataPropertyName = "rate2";
+            this.rate2.HeaderText = "Курс в копейках";
+            this.rate2.Name = "rate2";
+            this.rate2.ReadOnly = true;
+            // 
+            // rate
+            // 
+            this.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.rate.DataPropertyName = "rate";
+            this.rate.HeaderText = "Курс к Рублю";
+            this.rate.Name = "rate";
+            this.rate.ReadOnly = true;
+            // 
             // SetupForm
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 411);
+            this.Controls.Add(this.curDataGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkedListBox1);
             this.Name = "SetupForm";
@@ -147,9 +156,10 @@
         private Panel panel1;
         private Button button2;
         private Button button1;
+        private System.Windows.Forms.Timer curTimer;
         private DataGridView curDataGridView;
         private DataGridViewTextBoxColumn code;
+        private DataGridViewTextBoxColumn rate2;
         private DataGridViewTextBoxColumn rate;
-        private System.Windows.Forms.Timer curTimer;
     }
 }
